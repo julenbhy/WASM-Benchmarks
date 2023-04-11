@@ -62,10 +62,9 @@ Basically, the directories tree will look something like this:
 	| ...
 	| <Benchmark-10>
 	| ExampleFolder
-| emsdk
 | Plotsdata
 | RAPL
-| compile_all.py
+| run_all.py
 
 ```
 
