@@ -1,6 +1,8 @@
 # On the Runtime and Energy Performance of WebAssembly
 #### Checking Energy Consumption and Runtime Performance between WebAssembly, JavaScript (asm.js) and C, using 10 microbenchmarks as case study.
 
+source code from: https://github.com/greensoftwarelab/WasmBenchmarks
+
 ### What is this?
 
 This repo contains the source code of 10 distinct benchmarks, implemented in WebAssembly, JavaScript and C. Using Emscripten as a compiler, WebAssembly and Javascript were generated from a C source code.
