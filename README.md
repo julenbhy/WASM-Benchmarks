@@ -32,21 +32,20 @@ Basically, the directories tree will look something like this:
 					| ...
 				| Makefile
 				| benchmark_runLARGE
-			| JS
+			| WASM+JS
 				| Results
 					| benchmarkLARGE1.rapl
 					| benchmarkLARGE1.time
 					| ...
 				| Makefile
 				| benchmark_runJS_LARGE.js
-				| benchmark_runJS_LARGE.js.mem
+				| benchmark_runJS_LARGE.wasm
 			| WASM
 				| Results
 					| benchmarkLARGE1.rapl
 					| benchmarkLARGE1.time
 					| ...
 				| Makefile
-				| benchmark_runWASM_Large.js
 				| benchmark_runWASM_Large.wasm
 			| Makefile
 			| benchmarkLARGE.csv
@@ -75,7 +74,7 @@ To understand how this system works let's add and run an example.
 1. Take a microbenchmark in language C, for example, `fibonacci.c`.
 
 2. In [`ExampleFolder`](https://github.com/OnThePerformanceofWebAssembly/PerformanceOfWebAssembly/tree/main/Benchmarks/ExampleFolder) (change its name if you want to) replace `example.c` for `fibonacci.c`.
-
+Large_dataset
 3. Deal with input. The microbenchmarks can´t receive input as an argument, so, you need to add the three differents inputs sizes in a header called `datasets.h`. For example, if you want the `Small`, `Medium` and `Large` inputs to be 1, 2 and 3, respectively, the `datasets.h` will be like this:
 
 ```Java
