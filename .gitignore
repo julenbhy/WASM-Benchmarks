@@ -1,11 +1,12 @@
 # Execution result
-.js
-.html
-.wasm
-.csv
+*.js
+*.html
+*.wasm
+*.csv
+*.rapl
+*.time
 .DS_Store
-.rapl
-.time
+.ipynb_checkpoints/
 
 
 # Prerequisites
