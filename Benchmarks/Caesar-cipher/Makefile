@@ -27,9 +27,9 @@ jslarge:
 	emcc caesar-cipher.c -DLARGE_DATASET -o Large_dataset/WASM+JS/caesar-cipher_runLARGE.js -O2 -s WASM=1
 	
 compileall:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Small_dataset/C/caesar-cipher_runSMALL -lapr-1 -lgomp -lm -DSMALL_DATASET
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Medium_dataset/C/caesar-cipher_runMEDIUM -lapr-1 -lgomp -lm -DMEDIUM_DATASET
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Large_dataset/C/caesar-cipher_runLARGE -lapr-1 -lgomp -lm -DLARGE_DATASET
+#	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Small_dataset/C/caesar-cipher_runSMALL -lapr-1 -lgomp -lm -DSMALL_DATASET
+#	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Medium_dataset/C/caesar-cipher_runMEDIUM -lapr-1 -lgomp -lm -DMEDIUM_DATASET
+#	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Large_dataset/C/caesar-cipher_runLARGE -lapr-1 -lgomp -lm -DLARGE_DATASET
 	emcc caesar-cipher.c -DSMALL_DATASET -o Small_dataset/WASM+JS/caesar-cipher_runWASM_SMALL.js -O2 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1
 	emcc caesar-cipher.c -DSMALL_DATASET -o Small_dataset/WASM/caesar-cipher_runSMALL.wasm -O2 -s WASM=1
 	emcc caesar-cipher.c -DMEDIUM_DATASET -o Medium_dataset/WASM+JS/caesar-cipher_runWASM_MEDIUM.js -O2 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1
