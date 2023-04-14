@@ -43,33 +43,17 @@ benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 	| Caesar-cipher
 		| Large_dataset
 			| C
-				| benchmark
-				| time.txt
-				| strace.txt
+				| ...
 			| WASM+JS
-				| benchmark.js
-				| benchmark.wasm
-				| time.txt
-				| strace.txt
+				| ...
 			| WASM
-				| benchmark.wasm
-				| time.txt
-				| strace.txt
+				| ...
 			| Docker+C
-				| benchmark
-				| Dockerfile
-				| time.txt
-				| strace.txt
+				| ...
 			| Docker+runtime
-				| benchmark.wasm
-				| Dockerfile
-				| time.txt
-				| strace.txt
+				| ...
 			| Docker+WASM
-				| benchmark.wasm
-				| Dockerfile
-				| time.txt
-				| strace.txt
+				| ..
 		| Medium_dataset
 			| ...
 		| Small_dataset
