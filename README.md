@@ -1,5 +1,5 @@
 # WebAssembly execution model comparison
-#### Checking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
+#### Benchmarking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
 
 ## Structure
 
