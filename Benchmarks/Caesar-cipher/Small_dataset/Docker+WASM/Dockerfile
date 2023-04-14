@@ -1,6 +1,6 @@
 FROM scratch
 
-COPY ./benchmark.wasm /benchmark.wasm
+COPY ./benchmark.wasm .
 
 ENTRYPOINT [ "benchmark.wasm" ]
 

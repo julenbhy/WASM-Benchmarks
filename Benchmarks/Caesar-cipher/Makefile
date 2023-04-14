@@ -52,11 +52,10 @@ large_docker_runtime:
 small_docker_wasm:
 	cp Small_dataset/WASM/benchmark.wasm Small_dataset/Docker+WASM/
 	docker buildx build --platform wasi/wasm32 -t small_docker_wasm Small_dataset/Docker+WASM/
-
 medium_docker_wasm:
 	cp Medium_dataset/WASM/benchmark.wasm Medium_dataset/Docker+WASM/
 	docker buildx build --platform wasi/wasm32 -t medium_docker_wasm Medium_dataset/Docker+WASM/
-	
+
 large_docker_wasm:
 	cp Large_dataset/WASM/benchmark.wasm Large_dataset/Docker+WASM/
 	docker buildx build --platform wasi/wasm32 -t large_docker_wasm Large_dataset/Docker+WASM/
@@ -84,12 +83,12 @@ createcontainers:
 	make medium_docker_wasm
 	make large_docker_wasm
 
-clear:
+clean:
 	find . -name '*.wasm' -delete
 	find . -name '*.js' -delete
 	find . -name 'time.txt' -delete
 	
-clearcontainers:
+cleancontainers:
 	docker rmi small_docker_c
 	docker rmi medium_docker_c
 	docker rmi large_docker_c
@@ -101,14 +100,16 @@ clearcontainers:
 	docker rmi large_docker_wasm
 
 N_RUNS = 4
+RUNTIME = wasmtime
+#RUNTIME = wasmedge
 multitimeall:
 	multitime -q -n $(N_RUNS) ./Small_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Small_dataset/C/time.txt
 	multitime -q -n $(N_RUNS) ./Medium_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Medium_dataset/C/time.txt
 	multitime -q -n $(N_RUNS) ./Large_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Large_dataset/C/time.txt
 
-	multitime -q -n $(N_RUNS) wasmtime ./Small_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Small_dataset/WASM/time.txt
-	multitime -q -n $(N_RUNS) wasmtime ./Medium_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Medium_dataset/WASM/time.txt
-	multitime -q -n $(N_RUNS) wasmtime ./Large_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Large_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) $(RUNTIME) ./Small_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Small_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) $(RUNTIME) ./Medium_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Medium_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) $(RUNTIME) ./Large_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Large_dataset/WASM/time.txt
 	
 	multitime -q -n $(N_RUNS) node ./Small_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Small_dataset/WASM+JS/time.txt
 	multitime -q -n $(N_RUNS) node ./Medium_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Medium_dataset/WASM+JS/time.txt
@@ -134,9 +135,9 @@ straceall:
 	strace -c ./Medium_dataset/C/benchmark 2> ./Medium_dataset/C/strace.txt
 	strace -c ./Large_dataset/C/benchmark 2> ./Large_dataset/C/strace.txt
 	
-	strace -c wasmtime ./Small_dataset/WASM/benchmark.wasm 2> ./Small_dataset/WASM/strace.txt
-	strace -c wasmtime ./Medium_dataset/WASM/benchmark.wasm 2> ./Medium_dataset/WASM/strace.txt
-	strace -c wasmtime ./Large_dataset/WASM/benchmark.wasm 2> ./Large_dataset/WASM/strace.txt
+	strace -c $(RUNTIME) ./Small_dataset/WASM/benchmark.wasm 2> ./Small_dataset/WASM/strace.txt
+	strace -c $(RUNTIME) ./Medium_dataset/WASM/benchmark.wasm 2> ./Medium_dataset/WASM/strace.txt
+	strace -c $(RUNTIME) ./Large_dataset/WASM/benchmark.wasm 2> ./Large_dataset/WASM/strace.txt
 	
 	strace -c node ./Small_dataset/WASM+JS/benchmark.js 2> ./Small_dataset/WASM+JS/strace.txt
 	strace -c node ./Medium_dataset/WASM+JS/benchmark.js 2> ./Medium_dataset/WASM+JS/strace.txt

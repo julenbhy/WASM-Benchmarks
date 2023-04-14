@@ -1,34 +1,34 @@
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ------------------
- 91,27    0,046140           7      5862           rt_sigreturn
-  5,54    0,002802          15       179         5 futex
-  1,20    0,000605           5       114           rt_sigaction
-  0,63    0,000318          11        27           mmap
-  0,18    0,000090          45         2           openat
-  0,17    0,000085          10         8           pread64
-  0,16    0,000080          26         3           clone
-  0,12    0,000062          20         3           tgkill
-  0,10    0,000052          52         1           epoll_create1
-  0,10    0,000051          17         3           fcntl
-  0,10    0,000050           0        60           rt_sigprocmask
-  0,09    0,000045          45         1           readlinkat
-  0,04    0,000022          22         1           pipe2
-  0,04    0,000021          10         2         1 epoll_ctl
-  0,04    0,000019           4         4           epoll_pwait
-  0,03    0,000017          17         1           fstat
-  0,03    0,000017          17         1           getrlimit
-  0,03    0,000014           7         2           close
-  0,03    0,000014          14         1           madvise
-  0,03    0,000014           3         4           newfstatat
-  0,02    0,000012           6         2           sigaltstack
-  0,02    0,000009           9         1           setrlimit
-  0,01    0,000007           1         5           getpid
-  0,01    0,000005           5         1           gettid
-  0,01    0,000004           4         1           uname
+ 38,18    0,001298           7       174         7 futex
+ 30,47    0,001036           9       114           rt_sigaction
+ 13,29    0,000452         150         3           tgkill
+  4,41    0,000150          75         2           sched_yield
+  3,68    0,000125          31         4           clone
+  2,41    0,000082           3        24           mmap
+  1,38    0,000047           0        62           rt_sigprocmask
+  1,38    0,000047           3        12           rt_sigreturn
+  1,29    0,000044           5         8           pread64
+  0,82    0,000028           5         5           getpid
+  0,62    0,000021          21         1           readlinkat
+  0,50    0,000017           8         2           sigaltstack
+  0,32    0,000011           5         2           close
+  0,26    0,000009           2         4           epoll_pwait
+  0,24    0,000008           4         2           openat
+  0,21    0,000007           7         1           gettid
+  0,18    0,000006           3         2         1 epoll_ctl
+  0,15    0,000005           5         1           pipe2
+  0,12    0,000004           4         1           epoll_create1
+  0,09    0,000003           3         1           fstat
   0,00    0,000000           0         1           read
-  0,00    0,000000           0         2           sched_yield
+  0,00    0,000000           0         1           madvise
   0,00    0,000000           0         1           execve
+  0,00    0,000000           0         1           uname
+  0,00    0,000000           0         3           fcntl
+  0,00    0,000000           0         1           getrlimit
   0,00    0,000000           0         1           arch_prctl
+  0,00    0,000000           0         1           setrlimit
   0,00    0,000000           0         1           sched_getaffinity
+  0,00    0,000000           0         4           newfstatat
 ------ ----------- ----------- --------- --------- ------------------
-100,00    0,050555           8      6295         6 total
+100,00    0,003400           7       440         8 total
