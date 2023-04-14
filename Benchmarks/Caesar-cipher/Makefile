@@ -1,7 +1,6 @@
 csmall:
 	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Small_dataset/C/benchmark -lapr-1 -lgomp -lm -DSMALL_DATASET
 
-
 cmedium:
 	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Medium_dataset/C/benchmark -lapr-1 -lgomp -lm -DMEDIUM_DATASET
 
@@ -101,34 +100,32 @@ clearcontainers:
 	docker rmi medium_docker_wasm
 	docker rmi large_docker_wasm
 
-
+N_RUNS = 4
 runall:
-	multitime -q -n 3 ./Small_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Small_dataset/C/time.txt
-	multitime -q -n 3 ./Medium_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Medium_dataset/C/time.txt
-	multitime -q -n 3 ./Large_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Large_dataset/C/time.txt
+	multitime -q -n $(N_RUNS) ./Small_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Small_dataset/C/time.txt
+	multitime -q -n $(N_RUNS) ./Medium_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Medium_dataset/C/time.txt
+	multitime -q -n $(N_RUNS) ./Large_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Large_dataset/C/time.txt
 
-	multitime -q -n 3 wasmtime ./Small_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Small_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) wasmtime ./Small_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Small_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) wasmtime ./Medium_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Medium_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) wasmtime ./Large_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Large_dataset/WASM/time.txt
 	
-	multitime -q -n 3 wasmtime ./Medium_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Medium_dataset/WASM/time.txt
-	 
-	multitime -q -n 3 wasmtime ./Large_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Large_dataset/WASM/time.txt
-	
-	multitime -q -n 3 node ./Small_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Small_dataset/WASM+JS/time.txt
-	multitime -q -n 3 node ./Medium_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Medium_dataset/WASM+JS/time.txt
-	multitime -q -n 3 node ./Large_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Large_dataset/WASM+JS/time.txt
+	multitime -q -n $(N_RUNS) node ./Small_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Small_dataset/WASM+JS/time.txt
+	multitime -q -n $(N_RUNS) node ./Medium_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Medium_dataset/WASM+JS/time.txt
+	multitime -q -n $(N_RUNS) node ./Large_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Large_dataset/WASM+JS/time.txt
 
-	multitime -q -n 3 docker run --rm small_docker_c 2>&1 | sed '1,2d' > ./Small_dataset/Docker+C/time.txt
-	multitime -q -n 3 docker run --rm medium_docker_c 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+C/time.txt
-	multitime -q -n 3 docker run --rm large_docker_c 2>&1 | sed '1,2d' > ./Large_dataset/Docker+C/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm small_docker_c 2>&1 | sed '1,2d' > ./Small_dataset/Docker+C/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm medium_docker_c 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+C/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm large_docker_c 2>&1 | sed '1,2d' > ./Large_dataset/Docker+C/time.txt
 	
-	multitime -q -n 3 docker run --rm small_docker_runtime 2>&1 | sed '1,2d' > ./Small_dataset/Docker+runtime/time.txt
-	multitime -q -n 3 docker run --rm medium_docker_runtime 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+runtime/time.txt
-	multitime -q -n 3 docker run --rm large_docker_runtime 2>&1 | sed '1,2d' > ./Large_dataset/Docker+runtime/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm small_docker_runtime 2>&1 | sed '1,2d' > ./Small_dataset/Docker+runtime/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm medium_docker_runtime 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+runtime/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm large_docker_runtime 2>&1 | sed '1,2d' > ./Large_dataset/Docker+runtime/time.txt
 
-	multitime -q -n 3 docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 small_docker_wasm \
+	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 small_docker_wasm \
 	 2>&1 | sed '1,2d' > ./Small_dataset/Docker+WASM/time.txt
-	multitime -q -n 3 docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 medium_docker_wasm \
+	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 medium_docker_wasm \
 	 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+WASM/time.txt
-	multitime -q -n 3 docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
+	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
 	 2>&1 | sed '1,2d' > ./Large_dataset/Docker+WASM/time.txt
 
