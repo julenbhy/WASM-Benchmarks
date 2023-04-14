@@ -101,7 +101,7 @@ clearcontainers:
 	docker rmi large_docker_wasm
 
 N_RUNS = 4
-runall:
+multitimeall:
 	multitime -q -n $(N_RUNS) ./Small_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Small_dataset/C/time.txt
 	multitime -q -n $(N_RUNS) ./Medium_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Medium_dataset/C/time.txt
 	multitime -q -n $(N_RUNS) ./Large_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Large_dataset/C/time.txt
@@ -128,4 +128,33 @@ runall:
 	 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+WASM/time.txt
 	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
 	 2>&1 | sed '1,2d' > ./Large_dataset/Docker+WASM/time.txt
+	 
+straceall:
+	strace -c ./Small_dataset/C/benchmark 2> ./Small_dataset/C/strace.txt
+	strace -c ./Medium_dataset/C/benchmark 2> ./Medium_dataset/C/strace.txt
+	strace -c ./Large_dataset/C/benchmark 2> ./Large_dataset/C/strace.txt
+	
+	strace -c wasmtime ./Small_dataset/WASM/benchmark.wasm 2> ./Small_dataset/WASM/strace.txt
+	strace -c wasmtime ./Medium_dataset/WASM/benchmark.wasm 2> ./Medium_dataset/WASM/strace.txt
+	strace -c wasmtime ./Large_dataset/WASM/benchmark.wasm 2> ./Large_dataset/WASM/strace.txt
+	
+	strace -c node ./Small_dataset/WASM+JS/benchmark.js 2> ./Small_dataset/WASM+JS/strace.txt
+	strace -c node ./Medium_dataset/WASM+JS/benchmark.js 2> ./Medium_dataset/WASM+JS/strace.txt
+	strace -c node ./Large_dataset/WASM+JS/benchmark.js 2> ./Large_dataset/WASM+JS/strace.txt
+	
+	strace -c docker run --rm small_docker_c 2> ./Small_dataset/Docker+C/strace.txt
+	strace -c docker run --rm small_docker_c 2> ./Medium_dataset/Docker+C/strace.txt
+	strace -c docker run --rm small_docker_c 2> ./Large_dataset/Docker+C/strace.txt
+	
+	strace -c docker run --rm small_docker_runtime 2> ./Small_dataset/Docker+runtime/strace.txt
+	strace -c docker run --rm small_docker_runtime 2> ./Medium_dataset/Docker+runtime/strace.txt
+	strace -c docker run --rm small_docker_runtime 2> ./Large_dataset/Docker+runtime/strace.txt
+	
+	strace -c docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 small_docker_wasm \
+	  2> ./Small_dataset/Docker+WASM/strace.txt
+	strace -c docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 medium_docker_wasm \
+	  2> ./Medium_dataset/Docker+WASM/strace.txt
+	strace -c docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
+	  2> ./Large_dataset/Docker+WASM/strace.txt
+
 
