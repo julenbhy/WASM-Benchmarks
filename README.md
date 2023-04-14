@@ -1,46 +1,42 @@
-# On the Runtime and Energy Performance of WebAssembly
-#### Checking Energy Consumption and Runtime Performance between WebAssembly, JavaScript (asm.js) and C, using 10 microbenchmarks as case study.
+# WebAssembly execution model comparison
+#### Checking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
 
-source code from: https://github.com/greensoftwarelab/WasmBenchmarks
+benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 
-### What is this?
+## Structure
 
-This repo contains the source code of 10 distinct benchmarks, implemented in WebAssembly, JavaScript and C. Using Emscripten as a compiler, WebAssembly and Javascript were generated from a C source code.
-
-### How is it structured and hows does it work?
-
-This framework follows a specific folder structure, which guarantees the correct workflow when the goal is to perform and operation for all benchmarks.
-Moreover, it must be defined, for each benchmark, how to perform the operations considered.
-
-Next, we explain the folder structure and how to specify, for each language benchmark, the execution of each operation.
-
-#### The Structure
-The main folder contains 4 elements: 
-1. A `Benchmarks` sub-folder, containing a folder for each microbenchmark.
-
-
-Basically, the directories tree will look something like this:
-
-```Java
+```
 | Benchmarks
 	| <Benchmark-1>
 		| Large_dataset
 			| C
 				| benchmark
+				| time.txt
+				| strace.txt
 			| WASM+JS
 				| benchmark.js
 				| benchmark.wasm
+				| time.txt
+				| strace.txt
 			| WASM
 				| benchmark.wasm
+				| time.txt
+				| strace.txt
 			| Docker+C
 				| benchmark
 				| Dockerfile
-			| Docker+Runtime
+				| time.txt
+				| strace.txt
+			| Docker+runtime
 				| benchmark.wasm
 				| Dockerfile
-			| Docker+wASM
+				| time.txt
+				| strace.txt
+			| Docker+WASM
 				| benchmark.wasm
 				| Dockerfile
+				| time.txt
+				| strace.txt
 		| Medium_dataset
 			| ...
 		| Small_dataset
@@ -49,13 +45,41 @@ Basically, the directories tree will look something like this:
 		datasets.h
 		inputgen.c
 		Makefile
+		plots.ipynb
 	| ...
-	| <Benchmark-10>
-	| ExampleFolder
-| bench.ipynb
-
+	| <Benchmark-n>
+README.md
 
 ```
+
+## How to run
+
+Each benchmark has its own Makefile. Use this Makefile to prepare and run all the execution models
+  + **make compileall**	to compile c.wasm and .js modules
+  + **make createcontainers**	to create all the containers
+  + **make multitimeall**	to measure the runtime of all models. Will generate time.txt for each execution model
+  + **make straceall**	to measure the system calls of all models. Will generate strace.txt for each execution model
+	
+
+## Execution models
+#### C: 
+&nbsp;&nbsp;&nbsp;&nbsp;C compiled code.
+
+#### WASM:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmtime.
+
+#### WASM+JS:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm  and .js glue code using emscripten and executed with node.
+
+#### Docker+C:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled and runned inside a container (from Ubuntu base image).
+
+#### Docker+runtime:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmtime inside a container (from Ubuntu base image).
+
+#### Docker+WASM:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmtime inside a container (using [Docker+Wasm Beta integration](https://www.docker.com/blog/announcing-dockerwasm-technical-preview-2/)).
+
 
 
 
