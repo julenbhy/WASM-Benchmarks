@@ -1,8 +1,6 @@
 # WebAssembly execution model comparison
 #### Checking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
 
-benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
-
 ## Structure
 
 ```
@@ -107,6 +105,6 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 #### [Caesar-cipher:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/Caesar-cipher) 
 &nbsp;&nbsp;&nbsp;&nbsp;The Caesar cipher is an ancient cipher which is made by shifting the letters of the alphabet by a set number. So a shift of -3, for example, would move each letter to the left by 3, such that A would become X and D would become A. For this package it also includes numbers and punctuation but the concept is the same.
 
-&nbsp;&nbsp;&nbsp;&nbsp;This benchmark has 3 different sizes available.
+&nbsp;&nbsp;&nbsp;&nbsp;This benchmark has 3 different sizes available. Code from: https://github.com/greensoftwarelab/WasmBenchmarks
 
 
