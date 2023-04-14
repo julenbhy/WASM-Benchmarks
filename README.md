@@ -74,10 +74,10 @@ README.md
 ## How to run
 
 Each benchmark has its own Makefile. Use this Makefile to prepare and run all the execution models
-  + 1 **make compileall**	to compile c.wasm and .js modules
-  + 2 **make createcontainers**	to create all the containers
-  + 3 **make multitimeall**	to measure the runtime of all models. Will generate time.txt for each execution model
-  + 4 **make straceall**	to measure the system calls of all models. Will generate strace.txt for each execution model
+  + 1st **make compileall**	to compile c.wasm and .js modules
+  + 2nd **make createcontainers**	to create all the containers
+  + 3rd **make multitimeall**	to measure the runtime of all models. Will generate time.txt for each execution model
+  + 4th **make straceall**	to measure the system calls of all models. Will generate strace.txt for each execution model
 	
 
 ## Execution models
