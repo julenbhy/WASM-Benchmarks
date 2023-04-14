@@ -8,6 +8,9 @@ benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 ```
 | Benchmarks
 	| bench_template
+		hello_world.c
+		Makefile
+		time_plots.ipynb
 		| compiled
 			| C
 				| benchmark
@@ -37,10 +40,13 @@ benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 				| Dockerfile
 				| time.txt
 				| strace.txt
-		hello_world.c
+		
+	| Caesar-cipher
+		caesar-cipher.c
+		datasets.h
+		inputgen.c
 		Makefile
 		time_plots.ipynb
-	| Caesar-cipher
 		| Large_dataset
 			| C
 				| ...
@@ -58,11 +64,7 @@ benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 			| ...
 		| Small_dataset
 			| ...
-		Caesar-cipher.c
-		datasets.h
-		inputgen.c
-		Makefile
-		time_plots.ipynb
+		
 	| ...
 	| <Benchmark-n>
 README.md
