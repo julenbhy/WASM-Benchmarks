@@ -7,7 +7,7 @@ benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 
 ```
 | Benchmarks
-	| <bench_template>
+	| bench_template
 		| compiled
 			| C
 				| benchmark
