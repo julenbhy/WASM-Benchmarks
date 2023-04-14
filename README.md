@@ -46,6 +46,7 @@ benchmark source code from: https://github.com/greensoftwarelab/WasmBenchmarks
 		inputgen.c
 		Makefile
 		plots.ipynb
+	| <bench_template>
 	| ...
 	| <Benchmark-n>
 README.md
