@@ -1,11 +1,11 @@
 c:
-	gcc -O3 hello_world.c -o compiled/C/benchmark
+	gcc -O3 benchmark.c -o compiled/C/benchmark
 
 wasm:
-	emcc hello_world.c -o compiled/WASM/benchmark.wasm -O2 -s WASM=1
+	emcc benchmark.c -o compiled/WASM/benchmark.wasm -O2 -s WASM=1
 	
 js:
-	emcc hello_world.c -o compiled/WASM+JS/benchmark.js -O2 -s WASM=1
+	emcc benchmark.c -o compiled/WASM+JS/benchmark.js -O2 -s WASM=1
 
 docker_c:
 	cp compiled/C/benchmark compiled/Docker+C/

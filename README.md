@@ -6,7 +6,7 @@
 ```
 | Benchmarks
 	| bench_template
-		hello_world.c
+		benchmark.c
 		Makefile
 		time_plots.ipynb
 		| compiled
