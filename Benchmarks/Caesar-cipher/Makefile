@@ -86,7 +86,7 @@ createcontainers:
 clean:
 	find . -name '*.wasm' -delete
 	find . -name '*.js' -delete
-	find . -name 'time.txt' -delete
+	#find . -name '.txt' -delete
 	
 cleancontainers:
 	docker rmi small_docker_c
@@ -99,63 +99,67 @@ cleancontainers:
 	docker rmi medium_docker_wasm
 	docker rmi large_docker_wasm
 
-N_RUNS = 4
+N_RUNS = 10
 RUNTIME = wasmtime
 #RUNTIME = wasmedge
+TIME_OUT=time
 multitimeall:
-	multitime -q -n $(N_RUNS) ./Small_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Small_dataset/C/time.txt
-	multitime -q -n $(N_RUNS) ./Medium_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Medium_dataset/C/time.txt
-	multitime -q -n $(N_RUNS) ./Large_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Large_dataset/C/time.txt
+	multitime -q -n $(N_RUNS) ./Small_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Small_dataset/C/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) ./Medium_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Medium_dataset/C/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) ./Large_dataset/C/benchmark 2>&1 | sed '1,2d' > ./Large_dataset/C/$(TIME_OUT).txt
 
-	multitime -q -n $(N_RUNS) $(RUNTIME) ./Small_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Small_dataset/WASM/time.txt
-	multitime -q -n $(N_RUNS) $(RUNTIME) ./Medium_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Medium_dataset/WASM/time.txt
-	multitime -q -n $(N_RUNS) $(RUNTIME) ./Large_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Large_dataset/WASM/time.txt
+	multitime -q -n $(N_RUNS) $(RUNTIME) ./Small_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Small_dataset/WASM/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) $(RUNTIME) ./Medium_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Medium_dataset/WASM/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) $(RUNTIME) ./Large_dataset/WASM/benchmark.wasm 2>&1 | sed '1,2d' > ./Large_dataset/WASM/$(TIME_OUT).txt
 	
-	multitime -q -n $(N_RUNS) node ./Small_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Small_dataset/WASM+JS/time.txt
-	multitime -q -n $(N_RUNS) node ./Medium_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Medium_dataset/WASM+JS/time.txt
-	multitime -q -n $(N_RUNS) node ./Large_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Large_dataset/WASM+JS/time.txt
+	multitime -q -n $(N_RUNS) node ./Small_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Small_dataset/WASM+JS/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) node ./Medium_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Medium_dataset/WASM+JS/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) node ./Large_dataset/WASM+JS/benchmark.js 2>&1 | sed '1,2d' > ./Large_dataset/WASM+JS/$(TIME_OUT).txt
 
-	multitime -q -n $(N_RUNS) docker run --rm small_docker_c 2>&1 | sed '1,2d' > ./Small_dataset/Docker+C/time.txt
-	multitime -q -n $(N_RUNS) docker run --rm medium_docker_c 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+C/time.txt
-	multitime -q -n $(N_RUNS) docker run --rm large_docker_c 2>&1 | sed '1,2d' > ./Large_dataset/Docker+C/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm small_docker_c 2>&1 | sed '1,2d' > ./Small_dataset/Docker+C/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) docker run --rm medium_docker_c 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+C/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) docker run --rm large_docker_c 2>&1 | sed '1,2d' > ./Large_dataset/Docker+C/$(TIME_OUT).txt
 	
-	multitime -q -n $(N_RUNS) docker run --rm small_docker_runtime 2>&1 | sed '1,2d' > ./Small_dataset/Docker+runtime/time.txt
-	multitime -q -n $(N_RUNS) docker run --rm medium_docker_runtime 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+runtime/time.txt
-	multitime -q -n $(N_RUNS) docker run --rm large_docker_runtime 2>&1 | sed '1,2d' > ./Large_dataset/Docker+runtime/time.txt
+	multitime -q -n $(N_RUNS) docker run --rm small_docker_runtime 2>&1 | sed '1,2d' > ./Small_dataset/Docker+runtime/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) docker run --rm medium_docker_runtime 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+runtime/$(TIME_OUT).txt
+	multitime -q -n $(N_RUNS) docker run --rm large_docker_runtime 2>&1 | sed '1,2d' > ./Large_dataset/Docker+runtime/$(TIME_OUT).txt
 
 	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 small_docker_wasm \
-	 2>&1 | sed '1,2d' > ./Small_dataset/Docker+WASM/time.txt
+	 2>&1 | sed '1,2d' > ./Small_dataset/Docker+WASM/$(TIME_OUT).txt
 	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 medium_docker_wasm \
-	 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+WASM/time.txt
+	 2>&1 | sed '1,2d' > ./Medium_dataset/Docker+WASM/$(TIME_OUT).txt
 	multitime -q -n $(N_RUNS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
-	 2>&1 | sed '1,2d' > ./Large_dataset/Docker+WASM/time.txt
+	 2>&1 | sed '1,2d' > ./Large_dataset/Docker+WASM/$(TIME_OUT).txt
 	 
+	 
+PARAMS=		#-c for summary
+STRACE_OUT=strace
 straceall:
-	strace -c ./Small_dataset/C/benchmark 2> ./Small_dataset/C/strace.txt
-	strace -c ./Medium_dataset/C/benchmark 2> ./Medium_dataset/C/strace.txt
-	strace -c ./Large_dataset/C/benchmark 2> ./Large_dataset/C/strace.txt
+	strace $(STRACE_PARAMS) ./Small_dataset/C/benchmark 2> ./Small_dataset/C/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) ./Medium_dataset/C/benchmark 2> ./Medium_dataset/C/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) ./Large_dataset/C/benchmark 2> ./Large_dataset/C/$(STRACE_OUT).txt
 	
-	strace -c $(RUNTIME) ./Small_dataset/WASM/benchmark.wasm 2> ./Small_dataset/WASM/strace.txt
-	strace -c $(RUNTIME) ./Medium_dataset/WASM/benchmark.wasm 2> ./Medium_dataset/WASM/strace.txt
-	strace -c $(RUNTIME) ./Large_dataset/WASM/benchmark.wasm 2> ./Large_dataset/WASM/strace.txt
+	strace $(STRACE_PARAMS) $(RUNTIME) ./Small_dataset/WASM/benchmark.wasm 2> ./Small_dataset/WASM/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) $(RUNTIME) ./Medium_dataset/WASM/benchmark.wasm 2> ./Medium_dataset/WASM/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) $(RUNTIME) ./Large_dataset/WASM/benchmark.wasm 2> ./Large_dataset/WASM/$(STRACE_OUT).txt
 	
-	strace -c node ./Small_dataset/WASM+JS/benchmark.js 2> ./Small_dataset/WASM+JS/strace.txt
-	strace -c node ./Medium_dataset/WASM+JS/benchmark.js 2> ./Medium_dataset/WASM+JS/strace.txt
-	strace -c node ./Large_dataset/WASM+JS/benchmark.js 2> ./Large_dataset/WASM+JS/strace.txt
+	strace $(STRACE_PARAMS) node ./Small_dataset/WASM+JS/benchmark.js 2> ./Small_dataset/WASM+JS/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) node ./Medium_dataset/WASM+JS/benchmark.js 2> ./Medium_dataset/WASM+JS/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) node ./Large_dataset/WASM+JS/benchmark.js 2> ./Large_dataset/WASM+JS/$(STRACE_OUT).txt
 	
-	strace -c docker run --rm small_docker_c 2> ./Small_dataset/Docker+C/strace.txt
-	strace -c docker run --rm small_docker_c 2> ./Medium_dataset/Docker+C/strace.txt
-	strace -c docker run --rm small_docker_c 2> ./Large_dataset/Docker+C/strace.txt
+	strace $(STRACE_PARAMS) docker run --rm small_docker_c 2> ./Small_dataset/Docker+C/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) docker run --rm small_docker_c 2> ./Medium_dataset/Docker+C/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) docker run --rm small_docker_c 2> ./Large_dataset/Docker+C/$(STRACE_OUT).txt
 	
-	strace -c docker run --rm small_docker_runtime 2> ./Small_dataset/Docker+runtime/strace.txt
-	strace -c docker run --rm small_docker_runtime 2> ./Medium_dataset/Docker+runtime/strace.txt
-	strace -c docker run --rm small_docker_runtime 2> ./Large_dataset/Docker+runtime/strace.txt
+	strace $(STRACE_PARAMS) docker run --rm small_docker_runtime 2> ./Small_dataset/Docker+runtime/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) docker run --rm small_docker_runtime 2> ./Medium_dataset/Docker+runtime/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) docker run --rm small_docker_runtime 2> ./Large_dataset/Docker+runtime/$(STRACE_OUT).txt
 	
-	strace -c docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 small_docker_wasm \
-	  2> ./Small_dataset/Docker+WASM/strace.txt
-	strace -c docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 medium_docker_wasm \
-	  2> ./Medium_dataset/Docker+WASM/strace.txt
-	strace -c docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
-	  2> ./Large_dataset/Docker+WASM/strace.txt
+	strace $(STRACE_PARAMS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 small_docker_wasm \
+	  2> ./Small_dataset/Docker+WASM/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 medium_docker_wasm \
+	  2> ./Medium_dataset/Docker+WASM/$(STRACE_OUT).txt
+	strace $(STRACE_PARAMS) docker run --rm --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 large_docker_wasm \
+	  2> ./Large_dataset/Docker+WASM/$(STRACE_OUT).txt
 
 

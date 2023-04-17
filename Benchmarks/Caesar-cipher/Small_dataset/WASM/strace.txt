@@ -1,0 +1,218 @@
+execve("/home/julen/.wasmtime/bin/wasmtime", ["wasmtime", "./Small_dataset/WASM/benchmark.w"...], 0x7fffc4a35548 /* 66 vars */) = 0
+brk(NULL)                               = 0x561e178a7000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc3e05d6c0) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77de0000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64", 0x7ffc3e05c8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=86127, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 86127, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fcb77dca000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14432, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcb77dc5000
+mmap(0x7fcb77dc6000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fcb77dc6000
+mmap(0x7fcb77dc7000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcb77dc7000
+mmap(0x7fcb77dc8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcb77dc8000
+close(3)                                = 0
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 127720, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcb77da5000
+mmap(0x7fcb77da8000, 94208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7fcb77da8000
+mmap(0x7fcb77dbf000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7fcb77dbf000
+mmap(0x7fcb77dc3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7fcb77dc3000
+close(3)                                = 0
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/librt.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/librt.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14664, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 16440, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcb77da0000
+mmap(0x7fcb77da1000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fcb77da1000
+mmap(0x7fcb77da2000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcb77da2000
+mmap(0x7fcb77da3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcb77da3000
+close(3)                                = 0
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=21448, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcb77d9b000
+mmap(0x7fcb77d9c000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fcb77d9c000
+mmap(0x7fcb77d9d000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcb77d9d000
+mmap(0x7fcb77d9e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcb77d9e000
+close(3)                                = 0
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcb77cb4000
+mmap(0x7fcb77cc2000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7fcb77cc2000
+mmap(0x7fcb77d3e000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7fcb77d3e000
+mmap(0x7fcb77d99000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7fcb77d99000
+close(3)                                = 0
+openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77cb2000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcb77a00000
+mmap(0x7fcb77a28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fcb77a28000
+mmap(0x7fcb77bbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fcb77bbd000
+mmap(0x7fcb77c15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fcb77c15000
+mmap(0x7fcb77c1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fcb77c1b000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77caf000
+arch_prctl(ARCH_SET_FS, 0x7fcb77cafc00) = 0
+set_tid_address(0x7fcb77cafed0)         = 36852
+set_robust_list(0x7fcb77cafee0, 24)     = 0
+rseq(0x7fcb77cb05a0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fcb77c15000, 16384, PROT_READ) = 0
+mprotect(0x7fcb77d99000, 4096, PROT_READ) = 0
+mprotect(0x7fcb77d9e000, 4096, PROT_READ) = 0
+mprotect(0x7fcb77da3000, 4096, PROT_READ) = 0
+mprotect(0x7fcb77dc3000, 4096, PROT_READ) = 0
+mprotect(0x7fcb77dc8000, 4096, PROT_READ) = 0
+mprotect(0x561e16611000, 536576, PROT_READ) = 0
+mprotect(0x7fcb77e1a000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fcb77dca000, 86127)           = 0
+poll([{fd=0, events=0}, {fd=1, events=0}, {fd=2, events=0}], 3, 0) = 0 (Timeout)
+rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fcb77a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGSEGV, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGSEGV, {sa_handler=0x561e1611f1e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, NULL, 8) = 0
+rt_sigaction(SIGBUS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGBUS, {sa_handler=0x561e1611f1e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, NULL, 8) = 0
+sigaltstack(NULL, {ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=0}) = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fcb77ddd000
+mprotect(0x7fcb77ddd000, 4096, PROT_NONE) = 0
+sigaltstack({ss_sp=0x7fcb77dde000, ss_flags=0, ss_size=8192}, NULL) = 0
+getrandom("\x87\xb1\x9d\xdf\x97\xec\xb4\x11", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x561e178a7000
+brk(0x561e178c8000)                     = 0x561e178c8000
+openat(AT_FDCWD, "/proc/self/maps", O_RDONLY|O_CLOEXEC) = 3
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+read(3, "561e15600000-561e16412000 r-xp 0"..., 1024) = 1024
+read(3, "rw-p 00000000 00:00 0 \n7fcb77cb4"..., 1024) = 1024
+read(3, "o.0\n7fcb77d9f000-7fcb77da0000 rw"..., 1024) = 1024
+read(3, "b77dc4000 r--p 0001d000 103:02 3"..., 1024) = 1024
+read(3, " 3696519                   /usr/"..., 1024) = 759
+close(3)                                = 0
+sched_getaffinity(36852, 32, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) = 8
+getrandom("\x9d\xb5\x81\x2b\xdd\x51\xae\xca\xda\x35\xc3\x6e\xa3\x7e\x5f\xe6", 16, GRND_INSECURE) = 16
+ioctl(2, TCGETS, 0x7ffc3e05c230)        = -1 ENOTTY (Inappropriate ioctl for device)
+statx(AT_FDCWD, "/home/julen/.config/wasmtime/config.toml", AT_STATX_SYNC_AS_STAT, STATX_ALL, 0x7ffc3e05b9f0) = -1 ENOENT (No such file or directory)
+statx(0, NULL, AT_STATX_SYNC_AS_STAT, STATX_ALL, NULL) = -1 EFAULT (Bad address)
+mkdir("/home/julen/.cache/wasmtime", 0777) = -1 EEXIST (File exists)
+statx(AT_FDCWD, "/home/julen/.cache/wasmtime", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+readlink("/home", 0x7ffc3e05b3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/julen", 0x7ffc3e05b3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/julen/.cache", 0x7ffc3e05b3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/julen/.cache/wasmtime", 0x7ffc3e05b3c0, 1023) = -1 EINVAL (Invalid argument)
+rt_sigaction(SIGRT_1, {sa_handler=0x7fcb77a918f0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+mmap(NULL, 2101248, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fcb777ff000
+mprotect(0x7fcb77800000, 2097152, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fcb779ff910, parent_tid=0x7fcb779ff910, exit_signal=0, stack=0x7fcb777ff000, stack_size=0x1ffa40, tls=0x7fcb779ff640} => {parent_tid=[36853]}, 88) = 36853
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGSEGV, {sa_handler=0x561e15ff81a0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, {sa_handler=0x561e1611f1e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, 8) = 0
+rt_sigaction(SIGILL, {sa_handler=0x561e15ff81a0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGFPE, {sa_handler=0x561e15ff81a0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x7fcb77a42520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+openat(AT_FDCWD, "./Small_dataset/WASM/benchmark.wasm", O_RDONLY|O_CLOEXEC) = 3
+statx(3, "", AT_STATX_SYNC_AS_STAT|AT_EMPTY_PATH, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0775, stx_size=1312696, ...}) = 0
+mmap(NULL, 1314816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb776be000
+read(3, "\0asm\1\0\0\0\1-\10`\1\177\1\177`\3\177\177\177\1\177`\1\177\0`\0\1\177`"..., 1312696) = 1312696
+read(3, "", 32)                         = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/home/julen/.cache/wasmtime/modules/wasmtime-0d8b737cbe0d4c8c6a939064995fd03d9afdb2b8/JLQ-c_X-WU9xm1ubvNqQMSIMjQzexfIdBtzTLgKsgko", O_RDONLY|O_CLOEXEC) = 3
+statx(3, "", AT_STATX_SYNC_AS_STAT|AT_EMPTY_PATH, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=654704, ...}) = 0
+mmap(NULL, 655360, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb7761e000
+read(3, "(\265/\375\0X\4\262\7\276E\r\314\35)\20\310\223\24:\377\377\377\377\377\277\332\374{\335\217\271"..., 654704) = 654704
+read(3, "", 32)                         = 0
+close(3)                                = 0
+mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77c8e000
+brk(0x561e178fb000)                     = 0x561e178fb000
+mmap(NULL, 2494464, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb773bd000
+mmap(NULL, 266240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77c4d000
+mremap(0x7fcb77c4d000, 266240, 528384, MREMAP_MAYMOVE) = 0x7fcb7733c000
+mremap(0x7fcb7733c000, 528384, 1052672, MREMAP_MAYMOVE) = 0x7fcb7723b000
+mremap(0x7fcb7723b000, 1052672, 2101248, MREMAP_MAYMOVE) = 0x7fcb7703a000
+munmap(0x7fcb77c8e000, 135168)          = 0
+munmap(0x7fcb773bd000, 2494464)         = 0
+munmap(0x7fcb7761e000, 655360)          = 0
+mmap(NULL, 1339392, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77577000
+mprotect(0x7fcb77577000, 1338912, PROT_READ) = 0
+mprotect(0x7fcb77578000, 8192, PROT_READ|PROT_EXEC) = 0
+munmap(0x7fcb7703a000, 2101248)         = 0
+futex(0x561e178a7f78, FUTEX_WAKE_PRIVATE, 1) = 1
+munmap(0x7fcb776be000, 1314816)         = 0
+getrandom(NULL, 0, GRND_NONBLOCK)       = 0
+getrandom("\xa4\xf4\x33\x51\xfb\x55\x5e\x68\xb9\xeb\x83\x03\x15\x9f\x18\xd2\x88\xb8\xf7\xc6\xe7\xde\x25\xd1\x5e\x46\x39\xdf\xd0\x8f\x20\x9f", 32, 0) = 32
+ioctl(0, TIOCGWINSZ, {ws_row=36, ws_col=196, ws_xpixel=0, ws_ypixel=0}) = 0
+ioctl(1, TIOCGWINSZ, {ws_row=36, ws_col=196, ws_xpixel=0, ws_ypixel=0}) = 0
+ioctl(2, TIOCGWINSZ, 0x7ffc3e05c570)    = -1 ENOTTY (Inappropriate ioctl for device)
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77dd7000
+mprotect(0x7fcb77dd7000, 8992, PROT_READ) = 0
+mprotect(0x7fcb77dd8000, 4096, PROT_READ|PROT_EXEC) = 0
+getpid()                                = 36852
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77dd4000
+mprotect(0x7fcb77dd4000, 8992, PROT_READ) = 0
+mprotect(0x7fcb77dd5000, 4096, PROT_READ|PROT_EXEC) = 0
+getpid()                                = 36852
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77dd1000
+mprotect(0x7fcb77dd1000, 8992, PROT_READ) = 0
+mprotect(0x7fcb77dd2000, 4096, PROT_READ|PROT_EXEC) = 0
+getpid()                                = 36852
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77dce000
+mprotect(0x7fcb77dce000, 8992, PROT_READ) = 0
+mprotect(0x7fcb77dcf000, 4096, PROT_READ|PROT_EXEC) = 0
+getpid()                                = 36852
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77dcb000
+mprotect(0x7fcb77dcb000, 8992, PROT_READ) = 0
+mprotect(0x7fcb77dcc000, 4096, PROT_READ|PROT_EXEC) = 0
+getpid()                                = 36852
+sigaltstack(NULL, {ss_sp=0x7fcb77dde000, ss_flags=0, ss_size=8192}) = 0
+mmap(NULL, 266240, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcb77c6e000
+mprotect(0x7fcb77c6f000, 262144, PROT_READ|PROT_WRITE) = 0
+sigaltstack({ss_sp=0x7fcb77c6f000, ss_flags=0, ss_size=262144}, NULL) = 0
+memfd_create("wasm-memory-image", MFD_CLOEXEC|MFD_ALLOW_SEALING) = 3
+write(3, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 1314816) = 1314816
+fcntl(3, F_ADD_SEALS, F_SEAL_SEAL|F_SEAL_SHRINK|F_SEAL_GROW|F_SEAL_WRITE) = 0
+mmap(NULL, 8589934592, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc970000000
+mprotect(0x7fc9f0000000, 16777216, PROT_READ|PROT_WRITE) = 0
+mmap(0x7fc9f0000000, 1314816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0x7fc9f0000000
+writev(1, [{iov_base="", iov_len=0}, {iov_base="317749526,417568469,1430441220,5"..., iov_len=1310168}], 2) = 1310168
+writev(1, [{iov_base="", iov_len=0}, {iov_base="\n", iov_len=1}], 2) = 1
+writev(1, [{iov_base="", iov_len=0}, {iov_base="317749526,417568469,1430441220,5"..., iov_len=1310168}], 2) = 1310168
+writev(1, [{iov_base="", iov_len=0}, {iov_base="\n", iov_len=1}], 2) = 1
+sigaltstack({ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=8192}, NULL) = 0
+munmap(0x7fcb77ddd000, 12288)           = 0
+munmap(0x7fcb77c6e000, 266240)          = 0
+exit_group(0)                           = ?
++++ exited with 0 +++

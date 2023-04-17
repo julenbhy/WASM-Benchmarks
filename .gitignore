@@ -5,7 +5,7 @@
 *.csv
 *.rapl
 *.time
-*.txt
+.txt
 .DS_Store
 .ipynb_checkpoints/
 
