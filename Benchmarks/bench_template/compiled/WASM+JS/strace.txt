@@ -1,759 +1,782 @@
-execve("/usr/bin/node", ["node", "./compiled/WASM+JS/benchmark.js"], 0x7ffc35e48fc8 /* 66 vars */) = 0
-brk(NULL)                               = 0x56360989c000
-arch_prctl(0x3001 /* ARCH_??? */, 0x7fffe2b50500) = -1 EINVAL (Invalid argument)
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b2152000
-readlink("/proc/self/exe", "/usr/bin/node", 4096) = 13
-access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
-openat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v3/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v3", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v2/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v2", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/tls/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/tls/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/haswell/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/haswell", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target/x86_64", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/usr/bin/lib.target/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/usr/bin/lib.target", 0x7fffe2b4f720, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=86127, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 86127, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fd5b213c000
-close(3)                                = 0
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnode.so.72", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=41099144, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 41219512, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5af800000
-mmap(0x7fd5aff8b000, 25423872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x78b000) = 0x7fd5aff8b000
-mmap(0x7fd5b17ca000, 6840320, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fca000) = 0x7fd5b17ca000
-mmap(0x7fd5b1e50000, 929792, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x264f000) = 0x7fd5b1e50000
-mmap(0x7fd5b1f33000, 116152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1f33000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
-pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
-pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
-pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5af400000
-mmap(0x7fd5af428000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fd5af428000
-mmap(0x7fd5af5bd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fd5af5bd000
-mmap(0x7fd5af615000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fd5af615000
-mmap(0x7fd5af61b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd5af61b000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 110776, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b2120000
-mprotect(0x7fd5b2122000, 98304, PROT_NONE) = 0
-mmap(0x7fd5b2122000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fd5b2122000
-mmap(0x7fd5b2133000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13000) = 0x7fd5b2133000
-mmap(0x7fd5b213a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7fd5b213a000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libuv.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libuv.so.1", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=198744, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 202448, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b20ee000
-mprotect(0x7fd5b20f5000, 167936, PROT_NONE) = 0
-mmap(0x7fd5b20f5000, 126976, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7fd5b20f5000
-mmap(0x7fd5b2114000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7fd5b2114000
-mmap(0x7fd5b211e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2f000) = 0x7fd5b211e000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=51512, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 53352, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b20e0000
-mmap(0x7fd5b20e1000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fd5b20e1000
-mmap(0x7fd5b20e9000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7fd5b20e9000
-mmap(0x7fd5b20ec000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7fd5b20ec000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libbrotlienc.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlienc.so.1", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=587944, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b20de000
-mmap(NULL, 589944, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b204d000
-mmap(0x7fd5b204e000, 249856, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fd5b204e000
-mmap(0x7fd5b208b000, 331776, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3e000) = 0x7fd5b208b000
-mmap(0x7fd5b20dc000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8e000) = 0x7fd5b20dc000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libcares.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcares.so.2", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=88080, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 90152, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b2036000
-mmap(0x7fd5b2038000, 65536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fd5b2038000
-mmap(0x7fd5b2048000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x7fd5b2048000
-mmap(0x7fd5b204b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x7fd5b204b000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=166256, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 168176, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b200c000
-mmap(0x7fd5b2011000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7fd5b2011000
-mmap(0x7fd5b2026000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7fd5b2026000
-mmap(0x7fd5b2032000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7fd5b2032000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libicui18n.so.70", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicui18n.so.70", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3328472, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 3334864, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5af000000
-mmap(0x7fd5af0e7000, 1716224, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe7000) = 0x7fd5af0e7000
-mmap(0x7fd5af28a000, 598016, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28a000) = 0x7fd5af28a000
-mmap(0x7fd5af31c000, 73728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x31b000) = 0x7fd5af31c000
-mmap(0x7fd5af32e000, 720, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd5af32e000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libicuuc.so.70", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.70", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2062664, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 2073312, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5aee05000
-mmap(0x7fd5aee6b000, 995328, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x66000) = 0x7fd5aee6b000
-mmap(0x7fd5aef5e000, 573440, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x159000) = 0x7fd5aef5e000
-mmap(0x7fd5aefea000, 81920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e4000) = 0x7fd5aefea000
-mmap(0x7fd5aeffe000, 4832, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd5aeffe000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2252096, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 2267328, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5aea00000
-mmap(0x7fd5aea9a000, 1114112, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9a000) = 0x7fd5aea9a000
-mmap(0x7fd5aebaa000, 454656, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1aa000) = 0x7fd5aebaa000
-mmap(0x7fd5aec19000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x218000) = 0x7fd5aec19000
-mmap(0x7fd5aec27000, 10432, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd5aec27000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b200a000
-mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5af719000
-mmap(0x7fd5af727000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7fd5af727000
-mmap(0x7fd5af7a3000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7fd5af7a3000
-mmap(0x7fd5af7fe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7fd5af7fe000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 127720, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b1fea000
-mmap(0x7fd5b1fed000, 94208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7fd5b1fed000
-mmap(0x7fd5b2004000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7fd5b2004000
-mmap(0x7fd5b2008000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7fd5b2008000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=137560, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 139320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5b1fc7000
-mmap(0x7fd5b1fc8000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fd5b1fc8000
-mmap(0x7fd5b1fc9000, 126976, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fd5b1fc9000
-mmap(0x7fd5b1fe8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20000) = 0x7fd5b1fe8000
-close(3)                                = 0
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libicudata.so.70", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicudata.so.70", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=29476472, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 29478936, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd5acc00000
-mmap(0x7fd5acc01000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fd5acc01000
-mmap(0x7fd5acc02000, 29466624, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fd5acc02000
-mmap(0x7fd5ae81c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c1b000) = 0x7fd5ae81c000
-close(3)                                = 0
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1fc5000
-mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1fc2000
-arch_prctl(ARCH_SET_FS, 0x7fd5b1fc2780) = 0
-set_tid_address(0x7fd5b1fc2a50)         = 40705
-set_robust_list(0x7fd5b1fc2a60, 24)     = 0
-rseq(0x7fd5b1fc3120, 0x20, 0, 0x53053053) = 0
-mprotect(0x7fd5ae81c000, 4096, PROT_READ) = 0
-mprotect(0x7fd5af615000, 16384, PROT_READ) = 0
-mprotect(0x7fd5b1fe8000, 4096, PROT_READ) = 0
-mprotect(0x7fd5b2008000, 4096, PROT_READ) = 0
-mprotect(0x7fd5af7fe000, 4096, PROT_READ) = 0
-mprotect(0x7fd5aec19000, 45056, PROT_READ) = 0
-mprotect(0x7fd5aefea000, 77824, PROT_READ) = 0
-mprotect(0x7fd5af31c000, 69632, PROT_READ) = 0
-mprotect(0x7fd5b2032000, 12288, PROT_READ) = 0
-mprotect(0x7fd5b204b000, 4096, PROT_READ) = 0
-mprotect(0x7fd5b20dc000, 4096, PROT_READ) = 0
-mprotect(0x7fd5b20ec000, 4096, PROT_READ) = 0
-mprotect(0x7fd5b211e000, 4096, PROT_READ) = 0
-mprotect(0x7fd5b213a000, 4096, PROT_READ) = 0
-mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1fbf000
-mmap(NULL, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1fba000
-mmap(NULL, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1fb1000
-mmap(NULL, 69632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd5b1fa0000
-mprotect(0x7fd5b1e50000, 860160, PROT_READ) = 0
-mprotect(0x5636083a8000, 4096, PROT_READ) = 0
-mprotect(0x7fd5b218c000, 8192, PROT_READ) = 0
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-munmap(0x7fd5b213c000, 86127)           = 0
-getrandom("\x43\xfa\xe5\xe5\x42\xfa\xb0\x45", 8, GRND_NONBLOCK) = 8
-brk(NULL)                               = 0x56360989c000
-brk(0x5636098bd000)                     = 0x5636098bd000
-futex(0x7fd5aec2777c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-brk(0x5636098de000)                     = 0x5636098de000
-futex(0x7fd5b211f620, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd5af442520}, NULL, 8) = 0
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=21814, ...}, AT_EMPTY_PATH) = 0
-fcntl(0, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
-ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-fcntl(1, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
-ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-fcntl(2, F_GETFL)                       = 0x8001 (flags O_WRONLY|O_LARGEFILE)
-ioctl(2, TCGETS, 0x7fffe2b50180)        = -1 ENOTTY (Inappropriate ioctl for device)
-newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=22458, ...}, AT_EMPTY_PATH) = 0
-rt_sigaction(SIGINT, {sa_handler=0x7fd5b008f1c0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESETHAND|0xffffffff00000000, sa_restorer=0x7fd5af442520}, NULL, 8) = 0
-rt_sigaction(SIGTERM, {sa_handler=0x7fd5b008f1c0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESETHAND|0xffffffff00000000, sa_restorer=0x7fd5af442520}, NULL, 8) = 0
-prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024, rlim_max=1024*1024}) = 0
-prlimit64(0, RLIMIT_NOFILE, {rlim_cur=1024*1024, rlim_max=1024*1024}, NULL) = 0
-ioctl(0, FIOCLEX)                       = 0
-ioctl(1, FIOCLEX)                       = 0
-ioctl(2, FIOCLEX)                       = 0
-ioctl(3, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(4, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(5, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(6, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(7, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(8, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(9, FIOCLEX)                       = -1 EBADF (Bad file descriptor)
-ioctl(10, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-ioctl(11, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-ioctl(12, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-ioctl(13, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-ioctl(14, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-ioctl(15, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-ioctl(16, FIOCLEX)                      = -1 EBADF (Bad file descriptor)
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-futex(0x7fd5aefff090, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-newfstatat(AT_FDCWD, "/usr/share/zoneinfo-icu/44/le/zoneinfo64.res", {st_mode=S_IFREG|0644, st_size=151344, ...}, 0) = 0
-openat(AT_FDCWD, "/usr/share/zoneinfo-icu/44/le/zoneinfo64.res", O_RDONLY) = 3
-mmap(NULL, 151344, PROT_READ, MAP_SHARED, 3, 0) = 0x7fd5b1f7b000
-close(3)                                = 0
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-epoll_create1(EPOLL_CLOEXEC)            = 3
-pipe2([4, 5], O_CLOEXEC)                = 0
-write(5, "*", 1)                        = 1
-futex(0x7fd5b211f638, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-pipe2([6, 7], O_NONBLOCK|O_CLOEXEC)     = 0
-eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 8
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-rt_sigaction(SIGRT_1, {sa_handler=0x7fd5af4918f0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fd5af442520}, NULL, 8) = 0
-rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
-mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd5ac3ff000
-mprotect(0x7fd5ac400000, 8388608, PROT_READ|PROT_WRITE) = 0
-rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
-clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fd5acbff910, parent_tid=0x7fd5acbff910, exit_signal=0, stack=0x7fd5ac3ff000, stack_size=0x7ffec0, tls=0x7fd5acbff640} => {parent_tid=[40706]}, 88) = 40706
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-futex(0x5636098d3170, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd5a77ff000
-mprotect(0x7fd5a7800000, 8388608, PROT_READ|PROT_WRITE) = 0
-rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
-clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fd5a7fff910, parent_tid=0x7fd5a7fff910, exit_signal=0, stack=0x7fd5a77ff000, stack_size=0x7ffec0, tls=0x7fd5a7fff640} => {parent_tid=[40707]}, 88) = 40707
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd5a6ffe000
-mprotect(0x7fd5a6fff000, 8388608, PROT_READ|PROT_WRITE) = 0
-rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
-clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fd5a77fe910, parent_tid=0x7fd5a77fe910, exit_signal=0, stack=0x7fd5a6ffe000, stack_size=0x7ffec0, tls=0x7fd5a77fe640} => {parent_tid=[40708]}, 88) = 40708
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd5a67fd000
-mprotect(0x7fd5a67fe000, 8388608, PROT_READ|PROT_WRITE) = 0
-rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
-clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fd5a6ffd910, parent_tid=0x7fd5a6ffd910, exit_signal=0, stack=0x7fd5a67fd000, stack_size=0x7ffec0, tls=0x7fd5a6ffd640} => {parent_tid=[40709]}, 88) = 40709
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd5a5ffc000
-mprotect(0x7fd5a5ffd000, 8388608, PROT_READ|PROT_WRITE) = 0
-rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
-clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fd5a67fc910, parent_tid=0x7fd5a67fc910, exit_signal=0, stack=0x7fd5a5ffc000, stack_size=0x7ffec0, tls=0x7fd5a67fc640} => {parent_tid=[40710]}, 88) = 40710
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-futex(0x7fffe2b50210, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x7fffe2b50210, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x7fffe2b50210, FUTEX_WAKE_PRIVATE, 1) = 0
-futex(0x7fffe2b50268, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
-futex(0x7fffe2b50210, FUTEX_WAKE_PRIVATE, 1) = 0
-futex(0x7fd5aec27788, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-epoll_create1(EPOLL_CLOEXEC)            = 13
-pipe2([14, 15], O_NONBLOCK|O_CLOEXEC)   = 0
-eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK)   = 16
-brk(0x563609905000)                     = 0x563609905000
-openat(AT_FDCWD, "/sys/fs/cgroup/memory/memory.limit_in_bytes", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/proc/meminfo", O_RDONLY|O_CLOEXEC) = 17
-read(17, "MemTotal:       32500236 kB\nMemF"..., 4095) = 1475
-close(17)                               = 0
-brk(0x56360992c000)                     = 0x56360992c000
-getpid()                                = 40705
-futex(0x7fd5b1f37f08, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-futex(0x7fd5b1f37dc8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-futex(0x7fd5b1f37dbc, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-futex(0x7fd5b1f37db4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-getpid()                                = 40705
-getrandom("\xdc\x67\x7e\x8d\x47\xfb\xf3\xc9\xa2\xf1\x34\x1f\x21\x7a\x8c\xd7\xc7\x4d\xb8\x18\x6c\x4a\xc5\xe1\x2f\xd8\x5b\xee\x6f\xfc\xdb\xbc", 32, 0) = 32
-getpid()                                = 40705
-futex(0x7fd5b1f37ed8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-getpid()                                = 40705
-getpid()                                = 40705
-getpid()                                = 40705
-getpid()                                = 40705
-mmap(0x58c31de000, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x58c31de000
-brk(0x56360994d000)                     = 0x56360994d000
-mmap(0x326f71e80000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x326f71e80000
-munmap(0x326f71ec0000, 258048)          = 0
-mprotect(0x326f71e80000, 262144, PROT_READ|PROT_WRITE) = 0
-brk(0x56360996e000)                     = 0x56360996e000
-getpid()                                = 40705
-getpid()                                = 40705
-mprotect(0x326f71e80000, 262144, PROT_READ) = 0
-mmap(0x245335a80000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x245335a80000
-munmap(0x245335ac0000, 258048)          = 0
-mprotect(0x245335a80000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x1fd7edb00000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x1fd7edb00000
-munmap(0x1fd7edb40000, 258048)          = 0
-mprotect(0x1fd7edb00000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x2372dbec0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2372dbec0000
-munmap(0x2372dbf00000, 258048)          = 0
-mprotect(0x2372dbec0000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x27c1cf380000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x27c1cf380000
-munmap(0x27c1cf3c0000, 258048)          = 0
-mprotect(0x27c1cf380000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x29e00ded0000, 45056, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x29e00ded0000
-munmap(0x29e00ded8000, 12288)           = 0
-mprotect(0x29e00ded0000, 32768, PROT_READ|PROT_WRITE) = 0
-mmap(0x23189b8c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x23189b8c0000
-munmap(0x23189b900000, 258048)          = 0
-mprotect(0x23189b8c0000, 262144, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3200000, 262144, PROT_NONE) = 0
-madvise(0x58c3200000, 262144, MADV_FREE) = 0
-mprotect(0x58c3200000, 4096, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3201000, 4096, PROT_NONE) = 0
-madvise(0x58c3201000, 4096, MADV_FREE)  = 0
-mprotect(0x58c3202000, 249856, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c323f000, 4096, PROT_NONE) = 0
-madvise(0x58c323f000, 4096, MADV_FREE)  = 0
-mmap(0xf64ed580000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0xf64ed580000
-munmap(0xf64ed5c0000, 258048)           = 0
-mprotect(0xf64ed580000, 262144, PROT_READ|PROT_WRITE) = 0
-brk(0x56360998f000)                     = 0x56360998f000
-munmap(0x23189b8d4000, 180224)          = 0
-mprotect(0x58c3228000, 4096, PROT_NONE) = 0
-madvise(0x58c3228000, 4096, MADV_FREE)  = 0
-mprotect(0x58c3229000, 94208, PROT_NONE) = 0
-madvise(0x58c3229000, 94208, MADV_FREE) = 0
-munmap(0xf64ed581000, 258048)           = 0
-mprotect(0x58c3202000, 155648, PROT_READ|PROT_EXEC) = 0
-mmap(0x346647c00000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x346647c00000
-munmap(0x346647c40000, 258048)          = 0
-mprotect(0x346647c00000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x25d254780000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x25d254780000
-munmap(0x25d2547c0000, 258048)          = 0
-mprotect(0x25d254780000, 262144, PROT_READ|PROT_WRITE) = 0
-brk(0x5636099b2000)                     = 0x5636099b2000
-brk(0x5636099ae000)                     = 0x5636099ae000
-brk(0x5636099ac000)                     = 0x5636099ac000
-brk(0x5636099a4000)                     = 0x5636099a4000
-brk(0x56360999f000)                     = 0x56360999f000
-readlink("/proc/self/exe", "/usr/bin/node", 8191) = 13
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-futex(0x7fd5b1f33bb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-getpid()                                = 40705
-futex(0x7fd5b211f66c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [USR1], 8) = 0
-mmap(NULL, 36864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd5b2149000
-mprotect(0x7fd5b214a000, 32768, PROT_READ|PROT_WRITE) = 0
-rt_sigprocmask(SIG_BLOCK, ~[], ~[KILL STOP RTMIN RT_1], 8) = 0
-clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fd5b2151910, parent_tid=0x7fd5b2151910, exit_signal=0, stack=0x7fd5b2149000, stack_size=0x7ec0, tls=0x7fd5b2151640} => {parent_tid=[40711]}, 88) = 40711
-rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
-rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
-rt_sigaction(SIGUSR1, {sa_handler=0x7fd5b01d5d30, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fd5af442520}, NULL, 8) = 0
-rt_sigprocmask(SIG_UNBLOCK, [USR1], NULL, 8) = 0
-brk(0x5636099c1000)                     = 0x5636099c1000
-brk(0x5636099bf000)                     = 0x5636099bf000
-brk(0x5636099e6000)                     = 0x5636099e6000
-mmap(0x2579ec400000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2579ec400000
-munmap(0x2579ec440000, 258048)          = 0
-mprotect(0x2579ec400000, 262144, PROT_READ|PROT_WRITE) = 0
-brk(0x563609a0a000)                     = 0x563609a0a000
-brk(0x563609a06000)                     = 0x563609a06000
-brk(0x5636099fe000)                     = 0x5636099fe000
-brk(0x5636099f6000)                     = 0x5636099f6000
-brk(0x5636099ee000)                     = 0x5636099ee000
-brk(0x5636099e6000)                     = 0x5636099e6000
-brk(0x5636099d8000)                     = 0x5636099d8000
-brk(0x5636099cd000)                     = 0x5636099cd000
-brk(0x5636099c4000)                     = 0x5636099c4000
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-brk(0x5636099eb000)                     = 0x5636099eb000
-brk(0x5636099e3000)                     = 0x5636099e3000
-mmap(0x12a6327c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x12a6327c0000
-munmap(0x12a632800000, 258048)          = 0
-mprotect(0x12a6327c0000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x8fec75c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x8fec75c0000
-munmap(0x8fec7600000, 258048)           = 0
-mprotect(0x8fec75c0000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0xffe306c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0xffe306c0000
-munmap(0xffe30700000, 258048)           = 0
-mprotect(0xffe306c0000, 262144, PROT_READ|PROT_WRITE) = 0
-mmap(0x363b16600000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x363b16600000
-munmap(0x363b16640000, 258048)          = 0
-mprotect(0x363b16600000, 262144, PROT_READ|PROT_WRITE) = 0
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x7fffe2b4e498, FUTEX_WAIT_BITSET_PRIVATE, 0, {tv_sec=5124, tv_nsec=955315000}, FUTEX_BITSET_MATCH_ANY) = -1 EAGAIN (Resource temporarily unavailable)
-futex(0x7fffe2b4e4a0, FUTEX_WAKE_PRIVATE, 1) = 0
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-getpid()                                = 40705
-mprotect(0x58c3240000, 262144, PROT_NONE) = 0
-madvise(0x58c3240000, 262144, MADV_FREE) = 0
-mprotect(0x58c3240000, 4096, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3241000, 4096, PROT_NONE) = 0
-madvise(0x58c3241000, 4096, MADV_FREE)  = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c327f000, 4096, PROT_NONE) = 0
-madvise(0x58c327f000, 4096, MADV_FREE)  = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_EXEC) = 0
-brk(0x563609a06000)                     = 0x563609a06000
-brk(0x5636099fe000)                     = 0x5636099fe000
-brk(0x5636099f6000)                     = 0x5636099f6000
-brk(0x5636099eb000)                     = 0x5636099eb000
-brk(0x5636099e3000)                     = 0x5636099e3000
-mmap(0x13813b5c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x13813b5c0000
-munmap(0x13813b600000, 258048)          = 0
-mprotect(0x13813b5c0000, 262144, PROT_READ|PROT_WRITE) = 0
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-brk(0x563609a04000)                     = 0x563609a04000
-brk(0x563609a00000)                     = 0x563609a00000
-brk(0x5636099fe000)                     = 0x5636099fe000
-brk(0x5636099f6000)                     = 0x5636099f6000
-brk(0x5636099ec000)                     = 0x5636099ec000
-brk(0x5636099e8000)                     = 0x5636099e8000
-brk(0x5636099e6000)                     = 0x5636099e6000
-brk(0x563609a0e000)                     = 0x563609a0e000
-brk(0x5636099fd000)                     = 0x5636099fd000
-brk(0x5636099f3000)                     = 0x5636099f3000
-brk(0x5636099ef000)                     = 0x5636099ef000
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-brk(0x563609a14000)                     = 0x563609a14000
-brk(0x563609a0c000)                     = 0x563609a0c000
-brk(0x5636099ff000)                     = 0x5636099ff000
-brk(0x5636099f6000)                     = 0x5636099f6000
-brk(0x5636099f2000)                     = 0x5636099f2000
-brk(0x5636099ef000)                     = 0x5636099ef000
-brk(0x563609a12000)                     = 0x563609a12000
-brk(0x563609a05000)                     = 0x563609a05000
-brk(0x5636099fc000)                     = 0x5636099fc000
-brk(0x5636099f8000)                     = 0x5636099f8000
-brk(0x5636099f5000)                     = 0x5636099f5000
-brk(0x563609a16000)                     = 0x563609a16000
-brk(0x563609a12000)                     = 0x563609a12000
-brk(0x563609a0a000)                     = 0x563609a0a000
-brk(0x563609a06000)                     = 0x563609a06000
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-getpid()                                = 40705
-getcwd("/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template", 4096) = 63
-brk(0x563609a2d000)                     = 0x563609a2d000
-brk(0x563609a25000)                     = 0x563609a25000
-brk(0x563609a21000)                     = 0x563609a21000
-brk(0x563609a14000)                     = 0x563609a14000
-brk(0x563609a0a000)                     = 0x563609a0a000
-brk(0x563609a06000)                     = 0x563609a06000
-brk(0x563609a2b000)                     = 0x563609a2b000
-mmap(0x2eef184c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2eef184c0000
-munmap(0x2eef18500000, 258048)          = 0
-mprotect(0x2eef184c0000, 262144, PROT_READ|PROT_WRITE) = 0
-brk(0x563609a23000)                     = 0x563609a23000
-brk(0x563609a1b000)                     = 0x563609a1b000
-brk(0x563609a13000)                     = 0x563609a13000
-brk(0x563609a0f000)                     = 0x563609a0f000
-brk(0x563609a30000)                     = 0x563609a30000
-mmap(0x26de064c0000, 393216, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x26de064c0000
-munmap(0x26de064e1000, 258048)          = 0
-mprotect(0x26de064c0000, 135168, PROT_READ|PROT_WRITE) = 0
-write(16, "\1\0\0\0\0\0\0\0", 8)        = 8
-brk(0x563609a25000)                     = 0x563609a25000
-brk(0x563609a1d000)                     = 0x563609a1d000
-brk(0x563609a15000)                     = 0x563609a15000
-brk(0x563609a11000)                     = 0x563609a11000
-brk(0x563609a0f000)                     = 0x563609a0f000
-mmap(0x9d36cac0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x9d36cac0000
-munmap(0x9d36cb00000, 258048)           = 0
-mprotect(0x9d36cac0000, 262144, PROT_READ|PROT_WRITE) = 0
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-mmap(0x3d7bb7580000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3d7bb7580000
-munmap(0x3d7bb75c0000, 258048)          = 0
-mprotect(0x3d7bb7580000, 262144, PROT_READ|PROT_WRITE) = 0
-futex(0x7fffe2b4e008, FUTEX_WAIT_BITSET_PRIVATE, 0, {tv_sec=5124, tv_nsec=967257000}, FUTEX_BITSET_MATCH_ANY) = 0
-futex(0x7fffe2b4e010, FUTEX_WAKE_PRIVATE, 1) = 0
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-getpid()                                = 40705
-mmap(0x93dc4480000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x93dc4480000
-munmap(0x93dc44c0000, 258048)           = 0
-mprotect(0x93dc4480000, 262144, PROT_READ|PROT_WRITE) = 0
-brk(0x563609a31000)                     = 0x563609a31000
-brk(0x563609a2d000)                     = 0x563609a2d000
-brk(0x563609a2b000)                     = 0x563609a2b000
-brk(0x563609a23000)                     = 0x563609a23000
-brk(0x563609a1f000)                     = 0x563609a1f000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-getuid()                                = 1000
-geteuid()                               = 1000
-getgid()                                = 1000
-getegid()                               = 1000
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_EXEC) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.js", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=18134, ...}) = 0
-statx(AT_FDCWD, "/home", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0750, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
-statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.js", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=18134, ...}) = 0
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/Cloudlab/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_EXEC) = 0
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.js", O_RDONLY|O_CLOEXEC) = 17
-statx(17, "", AT_STATX_SYNC_AS_STAT|AT_EMPTY_PATH, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=18134, ...}) = 0
-read(17, "var Module=typeof Module!=\"undef"..., 18134) = 18134
-close(17)                               = 0
-brk(0x563609a40000)                     = 0x563609a40000
-brk(0x563609a3d000)                     = 0x563609a3d000
-brk(0x563609a32000)                     = 0x563609a32000
-brk(0x563609a2e000)                     = 0x563609a2e000
-brk(0x563609a2b000)                     = 0x563609a2b000
-brk(0x563609a4d000)                     = 0x563609a4d000
-brk(0x563609a48000)                     = 0x563609a48000
-brk(0x563609a46000)                     = 0x563609a46000
-brk(0x563609a3e000)                     = 0x563609a3e000
-brk(0x563609a35000)                     = 0x563609a35000
-brk(0x563609a31000)                     = 0x563609a31000
-brk(0x563609a2e000)                     = 0x563609a2e000
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-brk(0x563609a4f000)                     = 0x563609a4f000
-brk(0x563609a47000)                     = 0x563609a47000
-brk(0x563609a3d000)                     = 0x563609a3d000
-brk(0x563609a39000)                     = 0x563609a39000
-brk(0x563609a37000)                     = 0x563609a37000
-openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.wasm", O_RDONLY|O_CLOEXEC) = 17
-statx(17, "", AT_STATX_SYNC_AS_STAT|AT_EMPTY_PATH, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0775, stx_size=6577, ...}) = 0
-read(17, "\0asm\1\0\0\0\1S\r`\1\177\1\177`\3\177\177\177\1\177`\3\177\177\177\0`\4\177"..., 6577) = 6577
-close(17)                               = 0
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e80, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
-futex(0x5636098d2e00, FUTEX_WAKE_PRIVATE, 1) = 0
-mmap(0x3a93529c7000, 1073741824, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3a93529c7000
-mprotect(0x3a93529c7000, 4096, PROT_READ|PROT_WRITE|PROT_EXEC) = 0
-brk(0x563609a58000)                     = 0x563609a58000
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e38, FUTEX_WAIT_PRIVATE, 3, NULL) = 0
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e00, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e00, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e84, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
-futex(0x5636098d2e00, FUTEX_WAKE_PRIVATE, 1) = 0
-mprotect(0x58c3202000, 155648, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_WRITE) = 0
-mprotect(0x58c3202000, 155648, PROT_READ|PROT_EXEC) = 0
-mprotect(0x58c3242000, 249856, PROT_READ|PROT_EXEC) = 0
-mmap(NULL, 10737479680, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fd30fff1000
-munmap(0x7fd30fff1000, 61440)           = 0
-mprotect(0x7fd390000000, 16777216, PROT_READ|PROT_WRITE) = 0
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-futex(0x5636098d2e50, FUTEX_WAKE_PRIVATE, 1) = 1
-newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-fcntl(0, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
-rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
-ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(0, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
-newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-fcntl(1, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
-rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
-ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(1, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
-newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=52176, ...}, AT_EMPTY_PATH) = 0
-fcntl(2, F_GETFL)                       = 0x8001 (flags O_WRONLY|O_LARGEFILE)
-epoll_ctl(13, EPOLL_CTL_ADD, 14, {events=EPOLLIN, data={u32=14, u64=14}}) = 0
-epoll_ctl(13, EPOLL_CTL_ADD, 16, {events=EPOLLIN, data={u32=16, u64=16}}) = 0
-epoll_wait(13, [{events=EPOLLIN, data={u32=16, u64=16}}], 1024, 0) = 1
-read(16, "\1\0\0\0\0\0\0\0", 1024)      = 8
-epoll_wait(13, [], 1024, 0)             = 0
-brk(0x563609a3e000)                     = 0x563609a3e000
-brk(0x563609a3d000)                     = 0x563609a3d000
-munmap(0x3a93529c7000, 1073741824)      = 0
-munmap(0x7fd310000000, 10737418240)     = 0
-brk(0x563609a3b000)                     = 0x563609a3b000
-mprotect(0x326f71e80000, 262144, PROT_READ|PROT_WRITE) = 0
-munmap(0x326f71e80000, 262144)          = 0
-mprotect(0x27c1cf380000, 262144, PROT_NONE) = 0
-madvise(0x27c1cf380000, 262144, MADV_FREE) = 0
-mprotect(0x2372dbec0000, 262144, PROT_NONE) = 0
-madvise(0x2372dbec0000, 262144, MADV_FREE) = 0
-mprotect(0x1fd7edb00000, 262144, PROT_NONE) = 0
-madvise(0x1fd7edb00000, 262144, MADV_FREE) = 0
-mprotect(0x245335a80000, 262144, PROT_NONE) = 0
-madvise(0x245335a80000, 262144, MADV_FREE) = 0
-mprotect(0x363b16600000, 262144, PROT_NONE) = 0
-madvise(0x363b16600000, 262144, MADV_FREE) = 0
-mprotect(0xffe306c0000, 262144, PROT_NONE) = 0
-madvise(0xffe306c0000, 262144, MADV_FREE) = 0
-mprotect(0x8fec75c0000, 262144, PROT_NONE) = 0
-madvise(0x8fec75c0000, 262144, MADV_FREE) = 0
-mprotect(0x12a6327c0000, 262144, PROT_NONE) = 0
-madvise(0x12a6327c0000, 262144, MADV_FREE) = 0
-munmap(0x23189b8c0000, 81920)           = 0
-munmap(0x346647c00000, 262144)          = 0
-munmap(0x2579ec400000, 262144)          = 0
-munmap(0x13813b5c0000, 262144)          = 0
-munmap(0x2eef184c0000, 262144)          = 0
-munmap(0x9d36cac0000, 262144)           = 0
-munmap(0x3d7bb7580000, 262144)          = 0
-munmap(0x3fb952240000, 262144)          = 0
-mprotect(0x58c3200000, 262144, PROT_NONE) = 0
-madvise(0x58c3200000, 262144, MADV_FREE) = 0
-mprotect(0x58c3240000, 262144, PROT_NONE) = 0
-madvise(0x58c3240000, 262144, MADV_FREE) = 0
-munmap(0xf64ed580000, 4096)             = 0
-munmap(0x25d254780000, 262144)          = 0
-munmap(0x93dc4480000, 262144)           = 0
-munmap(0x26de064c0000, 135168)          = 0
-munmap(0x29e00ded0000, 32768)           = 0
-munmap(0x12a6327c0000, 262144)          = 0
-munmap(0x8fec75c0000, 262144)           = 0
-munmap(0xffe306c0000, 262144)           = 0
-munmap(0x363b16600000, 262144)          = 0
-munmap(0x245335a80000, 262144)          = 0
-munmap(0x1fd7edb00000, 262144)          = 0
-munmap(0x2372dbec0000, 262144)          = 0
-munmap(0x27c1cf380000, 262144)          = 0
-munmap(0x58c31de000, 134217728)         = 0
-futex(0x5636098d2e54, FUTEX_WAKE_PRIVATE, 2147483647) = 4
-write(12, "\1\0\0\0\0\0\0\0", 8)        = 8
-futex(0x7fd5acbff910, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 40706, NULL, FUTEX_BITSET_MATCH_ANY) = -1 EAGAIN (Resource temporarily unavailable)
-munmap(0x7fd5ac3ff000, 8392704)         = 0
-epoll_ctl(3, EPOLL_CTL_ADD, 6, {events=EPOLLIN, data={u32=6, u64=6}}) = 0
-epoll_ctl(3, EPOLL_CTL_ADD, 8, {events=EPOLLIN, data={u32=8, u64=8}}) = 0
-epoll_wait(3, [], 1024, 0)              = 0
-close(6)                                = 0
-close(7)                                = 0
-close(8)                                = 0
-close(3)                                = 0
-futex(0x7fd5b1f37c84, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-fcntl(0, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
-rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
-ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(0, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
-newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-fcntl(1, F_GETFL)                       = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
-rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
-ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(1, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
-ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
-rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
-newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=56572, ...}, AT_EMPTY_PATH) = 0
-fcntl(2, F_GETFL)                       = 0x8001 (flags O_WRONLY|O_LARGEFILE)
-brk(0x563609a3a000)                     = 0x563609a3a000
-close(4)                                = 0
-close(5)                                = 0
-exit_group(0)                           = ?
-+++ exited with 0 +++
+     0.000000 execve("/usr/bin/node", ["node", "./compiled/WASM+JS/benchmark.js"], 0x7ffd13232458 /* 66 vars */) = 0
+     0.000236 brk(NULL)                 = 0x55ab863ac000
+     0.000057 arch_prctl(0x3001 /* ARCH_??? */, 0x7fffdcf76920) = -1 EINVAL (Invalid argument)
+     0.000104 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b38dc000
+     0.000026 readlink("/proc/self/exe", "/usr/bin/node", 4096) = 13
+     0.000043 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+     0.000024 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000026 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000024 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000021 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+     0.000022 openat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v3/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v3", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000019 openat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v2/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/glibc-hwcaps/x86-64-v2", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000024 openat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls/haswell", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/tls/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/tls/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/tls", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/haswell/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/haswell/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/haswell/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/haswell", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/x86_64/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000018 newfstatat(AT_FDCWD, "/usr/bin/lib.target/x86_64", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000018 openat(AT_FDCWD, "/usr/bin/lib.target/libnode.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000019 newfstatat(AT_FDCWD, "/usr/bin/lib.target", 0x7fffdcf75b40, 0) = -1 ENOENT (No such file or directory)
+     0.000019 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+     0.000020 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=86191, ...}, AT_EMPTY_PATH) = 0
+     0.000021 mmap(NULL, 86191, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f35b38c6000
+     0.000018 close(3)                  = 0
+     0.000023 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnode.so.72", O_RDONLY|O_CLOEXEC) = 3
+     0.000021 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000021 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=41099144, ...}, AT_EMPTY_PATH) = 0
+     0.000021 mmap(NULL, 41219512, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b1000000
+     0.000018 mmap(0x7f35b178b000, 25423872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x78b000) = 0x7f35b178b000
+     0.000022 mmap(0x7f35b2fca000, 6840320, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fca000) = 0x7f35b2fca000
+     0.000026 mmap(0x7f35b3650000, 929792, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x264f000) = 0x7f35b3650000
+     0.000029 mmap(0x7f35b3733000, 116152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f35b3733000
+     0.000033 close(3)                  = 0
+     0.000025 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000025 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+     0.000022 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+     0.000020 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+     0.000019 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+     0.000018 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+     0.000018 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+     0.000021 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+     0.000019 mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b0c00000
+     0.000021 mmap(0x7f35b0c28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f35b0c28000
+     0.000022 mmap(0x7f35b0dbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f35b0dbd000
+     0.000020 mmap(0x7f35b0e15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f35b0e15000
+     0.000023 mmap(0x7f35b0e1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f35b0e1b000
+     0.000026 close(3)                  = 0
+     0.000020 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000022 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+     0.000021 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000020 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+     0.000022 mmap(NULL, 110776, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b38aa000
+     0.000019 mprotect(0x7f35b38ac000, 98304, PROT_NONE) = 0
+     0.000065 mmap(0x7f35b38ac000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f35b38ac000
+     0.000022 mmap(0x7f35b38bd000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13000) = 0x7f35b38bd000
+     0.000021 mmap(0x7f35b38c4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7f35b38c4000
+     0.000027 close(3)                  = 0
+     0.000105 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libuv.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000023 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libuv.so.1", O_RDONLY|O_CLOEXEC) = 3
+     0.000021 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000020 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=198744, ...}, AT_EMPTY_PATH) = 0
+     0.000021 mmap(NULL, 202448, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b3878000
+     0.000150 mprotect(0x7f35b387f000, 167936, PROT_NONE) = 0
+     0.000257 mmap(0x7f35b387f000, 126976, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f35b387f000
+     0.000218 mmap(0x7f35b389e000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7f35b389e000
+     0.000209 mmap(0x7f35b38a8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2f000) = 0x7f35b38a8000
+     0.000069 close(3)                  = 0
+     0.000031 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000053 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = 3
+     0.000039 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000032 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=51512, ...}, AT_EMPTY_PATH) = 0
+     0.000037 mmap(NULL, 53352, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b386a000
+     0.000031 mmap(0x7f35b386b000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f35b386b000
+     0.000037 mmap(0x7f35b3873000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f35b3873000
+     0.000030 mmap(0x7f35b3876000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f35b3876000
+     0.000042 close(3)                  = 0
+     0.000026 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libbrotlienc.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000036 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlienc.so.1", O_RDONLY|O_CLOEXEC) = 3
+     0.000032 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000029 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=587944, ...}, AT_EMPTY_PATH) = 0
+     0.000034 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b3868000
+     0.000033 mmap(NULL, 589944, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b37d7000
+     0.000043 mmap(0x7f35b37d8000, 249856, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f35b37d8000
+     0.000033 mmap(0x7f35b3815000, 331776, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3e000) = 0x7f35b3815000
+     0.000029 mmap(0x7f35b3866000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8e000) = 0x7f35b3866000
+     0.000040 close(3)                  = 0
+     0.000027 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libcares.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000037 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcares.so.2", O_RDONLY|O_CLOEXEC) = 3
+     0.000034 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000030 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=88080, ...}, AT_EMPTY_PATH) = 0
+     0.000033 mmap(NULL, 90152, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b37c0000
+     0.000028 mmap(0x7f35b37c2000, 65536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f35b37c2000
+     0.000032 mmap(0x7f35b37d2000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x7f35b37d2000
+     0.000027 mmap(0x7f35b37d5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x7f35b37d5000
+     0.000038 close(3)                  = 0
+     0.000026 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000034 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = 3
+     0.000032 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000027 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=166256, ...}, AT_EMPTY_PATH) = 0
+     0.000030 mmap(NULL, 168176, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b3796000
+     0.000026 mmap(0x7f35b379b000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f35b379b000
+     0.000031 mmap(0x7f35b37b0000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7f35b37b0000
+     0.000028 mmap(0x7f35b37bc000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f35b37bc000
+     0.000039 close(3)                  = 0
+     0.000025 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libicui18n.so.70", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000032 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicui18n.so.70", O_RDONLY|O_CLOEXEC) = 3
+     0.000031 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000030 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3328472, ...}, AT_EMPTY_PATH) = 0
+     0.000034 mmap(NULL, 3334864, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b0800000
+     0.000030 mmap(0x7f35b08e7000, 1716224, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe7000) = 0x7f35b08e7000
+     0.000034 mmap(0x7f35b0a8a000, 598016, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28a000) = 0x7f35b0a8a000
+     0.000029 mmap(0x7f35b0b1c000, 73728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x31b000) = 0x7f35b0b1c000
+     0.000038 mmap(0x7f35b0b2e000, 720, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f35b0b2e000
+     0.000041 close(3)                  = 0
+     0.000030 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libicuuc.so.70", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000034 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.70", O_RDONLY|O_CLOEXEC) = 3
+     0.000032 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000029 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2062664, ...}, AT_EMPTY_PATH) = 0
+     0.000032 mmap(NULL, 2073312, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b0605000
+     0.000028 mmap(0x7f35b066b000, 995328, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x66000) = 0x7f35b066b000
+     0.000045 mmap(0x7f35b075e000, 573440, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x159000) = 0x7f35b075e000
+     0.000031 mmap(0x7f35b07ea000, 81920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e4000) = 0x7f35b07ea000
+     0.000036 mmap(0x7f35b07fe000, 4832, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f35b07fe000
+     0.000039 close(3)                  = 0
+     0.000031 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000035 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+     0.000033 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000029 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2252096, ...}, AT_EMPTY_PATH) = 0
+     0.000032 mmap(NULL, 2267328, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b0200000
+     0.000028 mmap(0x7f35b029a000, 1114112, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9a000) = 0x7f35b029a000
+     0.000031 mmap(0x7f35b03aa000, 454656, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1aa000) = 0x7f35b03aa000
+     0.000030 mmap(0x7f35b0419000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x218000) = 0x7f35b0419000
+     0.000035 mmap(0x7f35b0427000, 10432, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f35b0427000
+     0.000038 close(3)                  = 0
+     0.000029 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000034 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+     0.000048 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000032 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
+     0.000032 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b3794000
+     0.000030 mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b0f19000
+     0.000027 mmap(0x7f35b0f27000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7f35b0f27000
+     0.000032 mmap(0x7f35b0fa3000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7f35b0fa3000
+     0.000029 mmap(0x7f35b0ffe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7f35b0ffe000
+     0.000041 close(3)                  = 0
+     0.000026 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000034 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+     0.000031 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000031 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+     0.000030 mmap(NULL, 127720, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b3774000
+     0.000028 mmap(0x7f35b3777000, 94208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f35b3777000
+     0.000032 mmap(0x7f35b378e000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7f35b378e000
+     0.000030 mmap(0x7f35b3792000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7f35b3792000
+     0.000040 close(3)                  = 0
+     0.000030 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000034 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = 3
+     0.000032 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000029 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=137560, ...}, AT_EMPTY_PATH) = 0
+     0.000035 mmap(NULL, 139320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35b3751000
+     0.000034 mmap(0x7f35b3752000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f35b3752000
+     0.000043 mmap(0x7f35b3753000, 126976, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f35b3753000
+     0.000034 mmap(0x7f35b3772000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20000) = 0x7f35b3772000
+     0.000044 close(3)                  = 0
+     0.000039 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libicudata.so.70", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000039 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicudata.so.70", O_RDONLY|O_CLOEXEC) = 3
+     0.000037 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+     0.000033 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=29476472, ...}, AT_EMPTY_PATH) = 0
+     0.000036 mmap(NULL, 29478936, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f35ae400000
+     0.000032 mmap(0x7f35ae401000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f35ae401000
+     0.000036 mmap(0x7f35ae402000, 29466624, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f35ae402000
+     0.000034 mmap(0x7f35b001c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c1b000) = 0x7f35b001c000
+     0.000047 close(3)                  = 0
+     0.000057 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b0f17000
+     0.000062 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b0f14000
+     0.000036 arch_prctl(ARCH_SET_FS, 0x7f35b0f14780) = 0
+     0.000029 set_tid_address(0x7f35b0f14a50) = 51998
+     0.000028 set_robust_list(0x7f35b0f14a60, 24) = 0
+     0.000028 rseq(0x7f35b0f15120, 0x20, 0, 0x53053053) = 0
+     0.000033 mprotect(0x7f35b001c000, 4096, PROT_READ) = 0
+     0.000091 mprotect(0x7f35b0e15000, 16384, PROT_READ) = 0
+     0.000037 mprotect(0x7f35b3772000, 4096, PROT_READ) = 0
+     0.000035 mprotect(0x7f35b3792000, 4096, PROT_READ) = 0
+     0.000049 mprotect(0x7f35b0ffe000, 4096, PROT_READ) = 0
+     0.001110 mprotect(0x7f35b0419000, 45056, PROT_READ) = 0
+     0.000204 mprotect(0x7f35b07ea000, 77824, PROT_READ) = 0
+     0.000638 mprotect(0x7f35b0b1c000, 69632, PROT_READ) = 0
+     0.000057 mprotect(0x7f35b37bc000, 12288, PROT_READ) = 0
+     0.000061 mprotect(0x7f35b37d5000, 4096, PROT_READ) = 0
+     0.000043 mprotect(0x7f35b3866000, 4096, PROT_READ) = 0
+     0.000041 mprotect(0x7f35b3876000, 4096, PROT_READ) = 0
+     0.000113 mprotect(0x7f35b38a8000, 4096, PROT_READ) = 0
+     0.000058 mprotect(0x7f35b38c4000, 4096, PROT_READ) = 0
+     0.002566 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b0f11000
+     0.000122 mmap(NULL, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b0f0c000
+     0.001872 mmap(NULL, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b0f03000
+     0.000936 mmap(NULL, 69632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f35b0ef2000
+     0.006458 mprotect(0x7f35b3650000, 860160, PROT_READ) = 0
+     0.000053 mprotect(0x55ab84822000, 4096, PROT_READ) = 0
+     0.000031 mprotect(0x7f35b3916000, 8192, PROT_READ) = 0
+     0.000022 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000032 munmap(0x7f35b38c6000, 86191) = 0
+     0.000049 getrandom("\x90\x6b\x07\x5d\xa9\xa1\x28\xfb", 8, GRND_NONBLOCK) = 8
+     0.000014 brk(NULL)                 = 0x55ab863ac000
+     0.000010 brk(0x55ab863cd000)       = 0x55ab863cd000
+     0.000078 futex(0x7f35b042777c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000224 brk(0x55ab863ee000)       = 0x55ab863ee000
+     0.000075 futex(0x7f35b38a9620, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000037 rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f35b0c42520}, NULL, 8) = 0
+     0.000020 getuid()                  = 1000
+     0.000010 geteuid()                 = 1000
+     0.000009 getgid()                  = 1000
+     0.000009 getegid()                 = 1000
+     0.000011 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000019 newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000020 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000011 newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=24821, ...}, AT_EMPTY_PATH) = 0
+     0.000012 fcntl(0, F_GETFL)         = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+     0.000012 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000014 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000010 fcntl(1, F_GETFL)         = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+     0.000009 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000010 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000009 fcntl(2, F_GETFL)         = 0x8001 (flags O_WRONLY|O_LARGEFILE)
+     0.000009 ioctl(2, TCGETS, 0x7fffdcf765a0) = -1 ENOTTY (Inappropriate ioctl for device)
+     0.000013 newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=25542, ...}, AT_EMPTY_PATH) = 0
+     0.000012 rt_sigaction(SIGINT, {sa_handler=0x7f35b188f1c0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESETHAND|0xffffffff00000000, sa_restorer=0x7f35b0c42520}, NULL, 8) = 0
+     0.000011 rt_sigaction(SIGTERM, {sa_handler=0x7f35b188f1c0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER|SA_RESETHAND|0xffffffff00000000, sa_restorer=0x7f35b0c42520}, NULL, 8) = 0
+     0.000011 prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024, rlim_max=1024*1024}) = 0
+     0.000010 prlimit64(0, RLIMIT_NOFILE, {rlim_cur=1024*1024, rlim_max=1024*1024}, NULL) = 0
+     0.000048 ioctl(0, FIOCLEX)         = 0
+     0.000010 ioctl(1, FIOCLEX)         = 0
+     0.000009 ioctl(2, FIOCLEX)         = 0
+     0.000009 ioctl(3, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(4, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(5, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(6, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(7, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(8, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(9, FIOCLEX)         = -1 EBADF (Bad file descriptor)
+     0.000008 ioctl(10, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000008 ioctl(11, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(12, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(13, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000008 ioctl(14, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000008 ioctl(15, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000009 ioctl(16, FIOCLEX)        = -1 EBADF (Bad file descriptor)
+     0.000010 getuid()                  = 1000
+     0.000008 geteuid()                 = 1000
+     0.000008 getgid()                  = 1000
+     0.000008 getegid()                 = 1000
+     0.000010 getuid()                  = 1000
+     0.000008 geteuid()                 = 1000
+     0.000008 getgid()                  = 1000
+     0.000008 getegid()                 = 1000
+     0.000008 getuid()                  = 1000
+     0.000008 geteuid()                 = 1000
+     0.000008 getgid()                  = 1000
+     0.000008 getegid()                 = 1000
+     0.000008 getuid()                  = 1000
+     0.000008 geteuid()                 = 1000
+     0.000008 getgid()                  = 1000
+     0.000008 getegid()                 = 1000
+     0.000009 getuid()                  = 1000
+     0.000008 geteuid()                 = 1000
+     0.000008 getgid()                  = 1000
+     0.000008 getegid()                 = 1000
+     0.000022 getuid()                  = 1000
+     0.000008 geteuid()                 = 1000
+     0.000008 getgid()                  = 1000
+     0.000008 getegid()                 = 1000
+     0.000020 futex(0x7f35b07ff090, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000033 newfstatat(AT_FDCWD, "/usr/share/zoneinfo-icu/44/le/zoneinfo64.res", {st_mode=S_IFREG|0644, st_size=151344, ...}, 0) = 0
+     0.000016 openat(AT_FDCWD, "/usr/share/zoneinfo-icu/44/le/zoneinfo64.res", O_RDONLY) = 3
+     0.000019 mmap(NULL, 151344, PROT_READ, MAP_SHARED, 3, 0) = 0x7f35b0ecd000
+     0.000013 close(3)                  = 0
+     0.000028 getuid()                  = 1000
+     0.000009 geteuid()                 = 1000
+     0.000009 getgid()                  = 1000
+     0.000009 getegid()                 = 1000
+     0.000022 epoll_create1(EPOLL_CLOEXEC) = 3
+     0.000014 pipe2([4, 5], O_CLOEXEC)  = 0
+     0.000016 write(5, "*", 1)          = 1
+     0.000012 futex(0x7f35b38a9638, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000010 pipe2([6, 7], O_NONBLOCK|O_CLOEXEC) = 0
+     0.000011 eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 8
+     0.000015 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000011 rt_sigaction(SIGRT_1, {sa_handler=0x7f35b0c918f0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f35b0c42520}, NULL, 8) = 0
+     0.000010 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+     0.000010 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f35adbff000
+     0.000011 mprotect(0x7f35adc00000, 8388608, PROT_READ|PROT_WRITE) = 0
+     0.000014 rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
+     0.000011 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f35ae3ff910, parent_tid=0x7f35ae3ff910, exit_signal=0, stack=0x7f35adbff000, stack_size=0x7ffec0, tls=0x7f35ae3ff640} => {parent_tid=[51999]}, 88) = 51999
+     0.000037 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000011 futex(0x55ab863e3170, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+     0.000048 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000010 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f35ad3fe000
+     0.000011 mprotect(0x7f35ad3ff000, 8388608, PROT_READ|PROT_WRITE) = 0
+     0.000013 rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
+     0.000011 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f35adbfe910, parent_tid=0x7f35adbfe910, exit_signal=0, stack=0x7f35ad3fe000, stack_size=0x7ffec0, tls=0x7f35adbfe640} => {parent_tid=[52000]}, 88) = 52000
+     0.000028 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000011 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000011 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f35acbfd000
+     0.000013 mprotect(0x7f35acbfe000, 8388608, PROT_READ|PROT_WRITE) = 0
+     0.000012 rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
+     0.000010 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f35ad3fd910, parent_tid=0x7f35ad3fd910, exit_signal=0, stack=0x7f35acbfd000, stack_size=0x7ffec0, tls=0x7f35ad3fd640} => {parent_tid=[52001]}, 88) = 52001
+     0.000102 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000020 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000018 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f35ac3fc000
+     0.000017 mprotect(0x7f35ac3fd000, 8388608, PROT_READ|PROT_WRITE) = 0
+     0.000015 rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
+     0.000016 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f35acbfc910, parent_tid=0x7f35acbfc910, exit_signal=0, stack=0x7f35ac3fc000, stack_size=0x7ffec0, tls=0x7f35acbfc640} => {parent_tid=[52002]}, 88) = 52002
+     0.000026 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000014 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000014 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f35a77ff000
+     0.000022 mprotect(0x7f35a7800000, 8388608, PROT_READ|PROT_WRITE) = 0
+     0.000016 rt_sigprocmask(SIG_BLOCK, ~[], [USR1], 8) = 0
+     0.000015 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f35a7fff910, parent_tid=0x7f35a7fff910, exit_signal=0, stack=0x7f35a77ff000, stack_size=0x7ffec0, tls=0x7f35a7fff640} => {parent_tid=[52003]}, 88) = 52003
+     0.000026 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000015 futex(0x7fffdcf76630, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000068 futex(0x7fffdcf76630, FUTEX_WAKE_PRIVATE, 1) = 0
+     0.000034 futex(0x7f35b0427788, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000143 epoll_create1(EPOLL_CLOEXEC) = 13
+     0.000011 pipe2([14, 15], O_NONBLOCK|O_CLOEXEC) = 0
+     0.000015 eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 16
+     0.000019 brk(0x55ab86415000)       = 0x55ab86415000
+     0.000060 openat(AT_FDCWD, "/sys/fs/cgroup/memory/memory.limit_in_bytes", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000022 openat(AT_FDCWD, "/proc/meminfo", O_RDONLY|O_CLOEXEC) = 17
+     0.000016 read(17, "MemTotal:       32500236 kB\nMemF"..., 4095) = 1475
+     0.000022 close(17)                 = 0
+     0.000070 brk(0x55ab8643c000)       = 0x55ab8643c000
+     0.000109 getpid()                  = 51998
+     0.000032 futex(0x7f35b3737f08, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000013 futex(0x7f35b3737dc8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000010 futex(0x7f35b3737dbc, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000009 futex(0x7f35b3737db4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000010 getpid()                  = 51998
+     0.000019 getrandom("\xdd\xe6\x42\xf7\x5b\x26\x72\x72\xf9\x0d\x5d\xcd\x30\xe0\x2d\xea\xda\x4b\x20\x90\x6c\x4f\x17\x82\x5d\xda\x6a\xfa\x66\x0e\x74\xa8", 32, 0) = 32
+     0.000013 getpid()                  = 51998
+     0.000013 futex(0x7f35b3737ed8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000012 getpid()                  = 51998
+     0.000010 getpid()                  = 51998
+     0.000012 getpid()                  = 51998
+     0.000009 getpid()                  = 51998
+     0.000018 mmap(0x38b1776cf000, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x38b1776cf000
+     0.000032 brk(0x55ab8645d000)       = 0x55ab8645d000
+     0.000053 mmap(0x173ac3780000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x173ac3780000
+     0.000010 munmap(0x173ac37c0000, 258048) = 0
+     0.000012 mprotect(0x173ac3780000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000086 brk(0x55ab8647e000)       = 0x55ab8647e000
+     0.000016 getpid()                  = 51998
+     0.000009 getpid()                  = 51998
+     0.000030 mprotect(0x173ac3780000, 262144, PROT_READ) = 0
+     0.000012 mmap(0x34eaeb940000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x34eaeb940000
+     0.000010 munmap(0x34eaeb980000, 258048) = 0
+     0.000011 mprotect(0x34eaeb940000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000014 mmap(0x1d18d9280000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x1d18d9280000
+     0.000010 munmap(0x1d18d92c0000, 258048) = 0
+     0.000010 mprotect(0x1d18d9280000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000013 mmap(0x16efdacc0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x16efdacc0000
+     0.000010 munmap(0x16efdad00000, 258048) = 0
+     0.000009 mprotect(0x16efdacc0000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000013 mmap(0x107e9b80000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x107e9b80000
+     0.000009 munmap(0x107e9bc0000, 258048) = 0
+     0.000009 mprotect(0x107e9b80000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000025 mmap(0x1fa6086b0000, 45056, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x1fa6086b0000
+     0.000010 munmap(0x1fa6086b8000, 12288) = 0
+     0.000010 mprotect(0x1fa6086b0000, 32768, PROT_READ|PROT_WRITE) = 0
+     0.000047 mmap(0x3f4aa9bc0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3f4aa9bc0000
+     0.000012 munmap(0x3f4aa9c00000, 258048) = 0
+     0.000011 mprotect(0x3f4aa9bc0000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000016 mprotect(0x38b177700000, 262144, PROT_NONE) = 0
+     0.000010 madvise(0x38b177700000, 262144, MADV_FREE) = 0
+     0.000011 mprotect(0x38b177700000, 4096, PROT_READ|PROT_WRITE) = 0
+     0.000009 mprotect(0x38b177701000, 4096, PROT_NONE) = 0
+     0.000009 madvise(0x38b177701000, 4096, MADV_FREE) = 0
+     0.000009 mprotect(0x38b177702000, 249856, PROT_READ|PROT_WRITE) = 0
+     0.000009 mprotect(0x38b17773f000, 4096, PROT_NONE) = 0
+     0.000009 madvise(0x38b17773f000, 4096, MADV_FREE) = 0
+     0.000016 mmap(0x119d34d40000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x119d34d40000
+     0.000010 munmap(0x119d34d80000, 258048) = 0
+     0.000009 mprotect(0x119d34d40000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000277 brk(0x55ab8649f000)       = 0x55ab8649f000
+     0.000297 munmap(0x3f4aa9bd4000, 180224) = 0
+     0.000016 mprotect(0x38b177728000, 4096, PROT_NONE) = 0
+     0.000015 madvise(0x38b177728000, 4096, MADV_FREE) = 0
+     0.000010 mprotect(0x38b177729000, 94208, PROT_NONE) = 0
+     0.000010 madvise(0x38b177729000, 94208, MADV_FREE) = 0
+     0.000010 munmap(0x119d34d41000, 258048) = 0
+     0.000010 mprotect(0x38b177702000, 155648, PROT_READ|PROT_EXEC) = 0
+     0.000052 mmap(0x39b5d26c0000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x39b5d26c0000
+     0.000010 munmap(0x39b5d2700000, 258048) = 0
+     0.000010 mprotect(0x39b5d26c0000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000076 mmap(0xb69d1b40000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0xb69d1b40000
+     0.000010 munmap(0xb69d1b80000, 258048) = 0
+     0.000010 mprotect(0xb69d1b40000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000576 brk(0x55ab864c2000)       = 0x55ab864c2000
+     0.000029 brk(0x55ab864be000)       = 0x55ab864be000
+     0.000013 brk(0x55ab864bc000)       = 0x55ab864bc000
+     0.000011 brk(0x55ab864b4000)       = 0x55ab864b4000
+     0.000010 brk(0x55ab864af000)       = 0x55ab864af000
+     0.002575 readlink("/proc/self/exe", "/usr/bin/node", 8191) = 13
+     0.000048 getuid()                  = 1000
+     0.000009 geteuid()                 = 1000
+     0.000009 getgid()                  = 1000
+     0.000009 getegid()                 = 1000
+     0.000016 futex(0x7f35b3733bb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000066 getpid()                  = 51998
+     0.000011 futex(0x7f35b38a966c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000027 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [USR1], 8) = 0
+     0.000012 mmap(NULL, 36864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f35b38d3000
+     0.000011 mprotect(0x7f35b38d4000, 32768, PROT_READ|PROT_WRITE) = 0
+     0.000012 rt_sigprocmask(SIG_BLOCK, ~[], ~[KILL STOP RTMIN RT_1], 8) = 0
+     0.000011 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f35b38db910, parent_tid=0x7f35b38db910, exit_signal=0, stack=0x7f35b38d3000, stack_size=0x7ec0, tls=0x7f35b38db640} => {parent_tid=[52004]}, 88) = 52004
+     0.000029 rt_sigprocmask(SIG_SETMASK, ~[KILL STOP RTMIN RT_1], NULL, 8) = 0
+     0.000011 rt_sigprocmask(SIG_SETMASK, [USR1], NULL, 8) = 0
+     0.000011 rt_sigaction(SIGUSR1, {sa_handler=0x7f35b19d5d30, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f35b0c42520}, NULL, 8) = 0
+     0.000012 rt_sigprocmask(SIG_UNBLOCK, [USR1], NULL, 8) = 0
+     0.000056 brk(0x55ab864d1000)       = 0x55ab864d1000
+     0.000339 brk(0x55ab864cf000)       = 0x55ab864cf000
+     0.002264 brk(0x55ab864f6000)       = 0x55ab864f6000
+     0.000677 mmap(0x2d7129900000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2d7129900000
+     0.000045 munmap(0x2d7129940000, 258048) = 0
+     0.000099 mprotect(0x2d7129900000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000216 brk(0x55ab8651a000)       = 0x55ab8651a000
+     0.000567 brk(0x55ab86516000)       = 0x55ab86516000
+     0.000046 brk(0x55ab8650e000)       = 0x55ab8650e000
+     0.000027 brk(0x55ab86506000)       = 0x55ab86506000
+     0.000022 brk(0x55ab864fe000)       = 0x55ab864fe000
+     0.000021 brk(0x55ab864f6000)       = 0x55ab864f6000
+     0.000021 brk(0x55ab864e8000)       = 0x55ab864e8000
+     0.000021 brk(0x55ab864dd000)       = 0x55ab864dd000
+     0.000021 brk(0x55ab864d4000)       = 0x55ab864d4000
+     0.001335 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000456 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000028 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000023 futex(0x55ab8642ea70, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000718 brk(0x55ab864fb000)       = 0x55ab864fb000
+     0.001055 brk(0x55ab864f3000)       = 0x55ab864f3000
+     0.000366 mmap(0x24e155640000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x24e155640000
+     0.000032 munmap(0x24e155680000, 258048) = 0
+     0.000022 mprotect(0x24e155640000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000024 mmap(0x27d152f00000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x27d152f00000
+     0.000017 munmap(0x27d152f40000, 258048) = 0
+     0.000015 mprotect(0x27d152f00000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000018 mmap(0x2625b3540000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2625b3540000
+     0.000016 munmap(0x2625b3580000, 258048) = 0
+     0.000016 mprotect(0x2625b3540000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000018 mmap(0x3c9049c40000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3c9049c40000
+     0.000016 munmap(0x3c9049c80000, 258048) = 0
+     0.000016 mprotect(0x3c9049c40000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000064 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000251 futex(0x7fffdcf748b8, FUTEX_WAKE_PRIVATE, 2147483647) = 1
+     0.000018 futex(0x7fffdcf748c0, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000027 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000017 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000028 getpid()                  = 51998
+     0.000102 mprotect(0x38b177740000, 262144, PROT_NONE) = 0
+     0.000019 madvise(0x38b177740000, 262144, MADV_FREE) = 0
+     0.000019 mprotect(0x38b177740000, 4096, PROT_READ|PROT_WRITE) = 0
+     0.000017 mprotect(0x38b177741000, 4096, PROT_NONE) = 0
+     0.000014 madvise(0x38b177741000, 4096, MADV_FREE) = 0
+     0.000014 mprotect(0x38b177742000, 249856, PROT_READ|PROT_WRITE) = 0
+     0.000015 mprotect(0x38b17777f000, 4096, PROT_NONE) = 0
+     0.000014 madvise(0x38b17777f000, 4096, MADV_FREE) = 0
+     0.000022 mprotect(0x38b177742000, 249856, PROT_READ|PROT_WRITE) = 0
+     0.000016 mprotect(0x38b177742000, 249856, PROT_READ|PROT_EXEC) = 0
+     0.000845 brk(0x55ab86516000)       = 0x55ab86516000
+     0.000345 brk(0x55ab8650e000)       = 0x55ab8650e000
+     0.000038 brk(0x55ab86506000)       = 0x55ab86506000
+     0.000016 brk(0x55ab864fb000)       = 0x55ab864fb000
+     0.000018 brk(0x55ab864f3000)       = 0x55ab864f3000
+     0.001376 mmap(0x2d0834b00000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2d0834b00000
+     0.000021 munmap(0x2d0834b40000, 258048) = 0
+     0.000019 mprotect(0x2d0834b00000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000317 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000021 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000024 futex(0x55ab8642ea70, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.001192 brk(0x55ab86515000)       = 0x55ab86515000
+     0.000168 brk(0x55ab8650e000)       = 0x55ab8650e000
+     0.000018 brk(0x55ab86506000)       = 0x55ab86506000
+     0.000017 brk(0x55ab86501000)       = 0x55ab86501000
+     0.000415 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000668 brk(0x55ab86524000)       = 0x55ab86524000
+     0.000310 brk(0x55ab8651c000)       = 0x55ab8651c000
+     0.000043 brk(0x55ab8650f000)       = 0x55ab8650f000
+     0.000016 brk(0x55ab86507000)       = 0x55ab86507000
+     0.000017 brk(0x55ab86503000)       = 0x55ab86503000
+     0.000022 brk(0x55ab86501000)       = 0x55ab86501000
+     0.001131 brk(0x55ab86525000)       = 0x55ab86525000
+     0.000173 brk(0x55ab8651d000)       = 0x55ab8651d000
+     0.000019 brk(0x55ab86515000)       = 0x55ab86515000
+     0.002259 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000123 getpid()                  = 51998
+     0.000091 getcwd("/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template", 4096) = 63
+     0.001214 brk(0x55ab8653c000)       = 0x55ab8653c000
+     0.000139 brk(0x55ab86534000)       = 0x55ab86534000
+     0.000020 brk(0x55ab86530000)       = 0x55ab86530000
+     0.000016 brk(0x55ab86523000)       = 0x55ab86523000
+     0.000014 brk(0x55ab8651b000)       = 0x55ab8651b000
+     0.000016 brk(0x55ab86517000)       = 0x55ab86517000
+     0.000013 brk(0x55ab86515000)       = 0x55ab86515000
+     0.000638 brk(0x55ab86539000)       = 0x55ab86539000
+     0.000321 mmap(0x3d5954e00000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3d5954e00000
+     0.000036 munmap(0x3d5954e40000, 258048) = 0
+     0.000017 mprotect(0x3d5954e00000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000589 mmap(0x1661c8700000, 393216, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x1661c8700000
+     0.000032 munmap(0x1661c8721000, 258048) = 0
+     0.000014 mprotect(0x1661c8700000, 135168, PROT_READ|PROT_WRITE) = 0
+     0.000034 write(16, "\1\0\0\0\0\0\0\0", 8) = 8
+     0.000398 mmap(0x139b2ba80000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x139b2ba80000
+     0.000038 munmap(0x139b2bac0000, 258048) = 0
+     0.000016 mprotect(0x139b2ba80000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000048 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000286 mmap(0x3cbee6780000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3cbee6780000
+     0.000017 munmap(0x3cbee67c0000, 258048) = 0
+     0.000016 mprotect(0x3cbee6780000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000052 futex(0x7fffdcf73fd8, FUTEX_WAIT_BITSET_PRIVATE, 0, {tv_sec=10786, tv_nsec=48169000}, FUTEX_BITSET_MATCH_ANY) = 0
+     0.000051 futex(0x7fffdcf73fe0, FUTEX_WAKE_PRIVATE, 1) = 0
+     0.000029 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000030 getpid()                  = 51998
+     0.000194 mmap(0x3fcf8a680000, 520192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x3fcf8a680000
+     0.000019 munmap(0x3fcf8a6c0000, 258048) = 0
+     0.000017 mprotect(0x3fcf8a680000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.003434 getuid()                  = 1000
+     0.000026 geteuid()                 = 1000
+     0.000017 getgid()                  = 1000
+     0.000016 getegid()                 = 1000
+     0.000016 getuid()                  = 1000
+     0.000012 geteuid()                 = 1000
+     0.000011 getgid()                  = 1000
+     0.000012 getegid()                 = 1000
+     0.000346 mprotect(0x38b177742000, 249856, PROT_READ|PROT_WRITE) = 0
+     0.000020 mprotect(0x38b177742000, 249856, PROT_READ|PROT_EXEC) = 0
+     0.000043 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.js", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=18134, ...}) = 0
+     0.000264 statx(AT_FDCWD, "/home", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0
+     0.000047 statx(AT_FDCWD, "/home/julen", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0750, stx_size=4096, ...}) = 0
+     0.000021 statx(AT_FDCWD, "/home/julen/Cloudlab", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+     0.000021 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+     0.000028 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+     0.000026 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+     0.000024 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+     0.000021 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0775, stx_size=4096, ...}) = 0
+     0.000020 statx(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.js", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=18134, ...}) = 0
+     0.000153 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000043 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000290 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000142 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000033 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000027 openat(AT_FDCWD, "/home/julen/Cloudlab/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000029 openat(AT_FDCWD, "/home/julen/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000022 openat(AT_FDCWD, "/home/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000017 openat(AT_FDCWD, "/package.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000382 mprotect(0x38b177742000, 249856, PROT_READ|PROT_WRITE) = 0
+     0.000035 mprotect(0x38b177742000, 249856, PROT_READ|PROT_EXEC) = 0
+     0.000615 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.js", O_RDONLY|O_CLOEXEC) = 17
+     0.000058 statx(17, "", AT_STATX_SYNC_AS_STAT|AT_EMPTY_PATH, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0664, stx_size=18134, ...}) = 0
+     0.000171 read(17, "var Module=typeof Module!=\"undef"..., 18134) = 18134
+     0.000028 close(17)                 = 0
+     0.000465 brk(0x55ab8655c000)       = 0x55ab8655c000
+     0.000036 brk(0x55ab86558000)       = 0x55ab86558000
+     0.000237 brk(0x55ab8654d000)       = 0x55ab8654d000
+     0.000010 brk(0x55ab86542000)       = 0x55ab86542000
+     0.001323 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.001209 brk(0x55ab86565000)       = 0x55ab86565000
+     0.000080 brk(0x55ab86561000)       = 0x55ab86561000
+     0.000012 brk(0x55ab8655f000)       = 0x55ab8655f000
+     0.000013 brk(0x55ab86557000)       = 0x55ab86557000
+     0.000010 brk(0x55ab8654d000)       = 0x55ab8654d000
+     0.000009 brk(0x55ab86549000)       = 0x55ab86549000
+     0.000422 openat(AT_FDCWD, "/home/julen/Cloudlab/WASM-Benchmarks/Benchmarks/bench_template/compiled/WASM+JS/benchmark.wasm", O_RDONLY|O_CLOEXEC) = 17
+     0.000018 statx(17, "", AT_STATX_SYNC_AS_STAT|AT_EMPTY_PATH, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0775, stx_size=6577, ...}) = 0
+     0.000034 read(17, "\0asm\1\0\0\0\1S\r`\1\177\1\177`\3\177\177\177\1\177`\3\177\177\177\0`\4\177"..., 6577) = 6577
+     0.000015 close(17)                 = 0
+     0.000040 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000015 futex(0x55ab863e2e80, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+     0.000142 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 0
+     0.000014 mmap(0x28cee6de5000, 1073741824, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x28cee6de5000
+     0.000016 mprotect(0x28cee6de5000, 4096, PROT_READ|PROT_WRITE|PROT_EXEC) = 0
+     0.000132 brk(0x55ab8656d000)       = 0x55ab8656d000
+     0.000021 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000067 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000105 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000022 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000022 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000018 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 0
+     0.000017 futex(0x55ab863e2e84, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+     0.004548 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 0
+     0.000119 mprotect(0x38b177702000, 155648, PROT_READ|PROT_WRITE) = 0
+     0.000031 mprotect(0x38b177742000, 249856, PROT_READ|PROT_WRITE) = 0
+     0.000144 mprotect(0x38b177702000, 155648, PROT_READ|PROT_EXEC) = 0
+     0.000030 mprotect(0x38b177742000, 249856, PROT_READ|PROT_EXEC) = 0
+     0.000180 mmap(NULL, 10737479680, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f330fff1000
+     0.000031 munmap(0x7f330fff1000, 61440) = 0
+     0.000026 mprotect(0x7f3390000000, 16777216, PROT_READ|PROT_WRITE) = 0
+     0.000159 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000029 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000019 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000029 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000018 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000016 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000677 newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000160 fcntl(0, F_GETFL)         = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+     0.000029 rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
+     0.000028 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000026 ioctl(0, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000023 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000018 rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
+     0.000018 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000022 fcntl(1, F_GETFL)         = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+     0.000017 rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
+     0.000021 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000021 ioctl(1, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000018 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000020 rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
+     0.000018 newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=57005, ...}, AT_EMPTY_PATH) = 0
+     0.000021 fcntl(2, F_GETFL)         = 0x8001 (flags O_WRONLY|O_LARGEFILE)
+     0.000023 epoll_ctl(13, EPOLL_CTL_ADD, 14, {events=EPOLLIN, data={u32=14, u64=14}}) = 0
+     0.000029 epoll_ctl(13, EPOLL_CTL_ADD, 16, {events=EPOLLIN, data={u32=16, u64=16}}) = 0
+     0.000021 epoll_wait(13, [{events=EPOLLIN, data={u32=16, u64=16}}], 1024, 0) = 1
+     0.000039 read(16, "\1\0\0\0\0\0\0\0", 1024) = 8
+     0.000034 epoll_wait(13, [], 1024, 0) = 0
+     0.000079 brk(0x55ab86569000)       = 0x55ab86569000
+     0.000028 brk(0x55ab8654f000)       = 0x55ab8654f000
+     0.000023 brk(0x55ab8654d000)       = 0x55ab8654d000
+     0.000027 munmap(0x28cee6de5000, 1073741824) = 0
+     0.000063 munmap(0x7f3310000000, 10737418240) = 0
+     0.000034 brk(0x55ab8654b000)       = 0x55ab8654b000
+     0.000024 mprotect(0x173ac3780000, 262144, PROT_READ|PROT_WRITE) = 0
+     0.000032 munmap(0x173ac3780000, 262144) = 0
+     0.000029 mprotect(0x107e9b80000, 262144, PROT_NONE) = 0
+     0.000021 madvise(0x107e9b80000, 262144, MADV_FREE) = 0
+     0.000034 mprotect(0x16efdacc0000, 262144, PROT_NONE) = 0
+     0.000021 madvise(0x16efdacc0000, 262144, MADV_FREE) = 0
+     0.000033 mprotect(0x1d18d9280000, 262144, PROT_NONE) = 0
+     0.000019 madvise(0x1d18d9280000, 262144, MADV_FREE) = 0
+     0.000030 mprotect(0x34eaeb940000, 262144, PROT_NONE) = 0
+     0.000017 madvise(0x34eaeb940000, 262144, MADV_FREE) = 0
+     0.000032 mprotect(0x3c9049c40000, 262144, PROT_NONE) = 0
+     0.000019 madvise(0x3c9049c40000, 262144, MADV_FREE) = 0
+     0.000023 mprotect(0x2625b3540000, 262144, PROT_NONE) = 0
+     0.000016 madvise(0x2625b3540000, 262144, MADV_FREE) = 0
+     0.000022 mprotect(0x27d152f00000, 262144, PROT_NONE) = 0
+     0.000014 madvise(0x27d152f00000, 262144, MADV_FREE) = 0
+     0.000020 mprotect(0x24e155640000, 262144, PROT_NONE) = 0
+     0.000014 madvise(0x24e155640000, 262144, MADV_FREE) = 0
+     0.000023 munmap(0x3f4aa9bc0000, 81920) = 0
+     0.000022 munmap(0x39b5d26c0000, 262144) = 0
+     0.000025 munmap(0x2d7129900000, 262144) = 0
+     0.000033 munmap(0x2d0834b00000, 262144) = 0
+     0.000025 munmap(0x3d5954e00000, 262144) = 0
+     0.000026 munmap(0x139b2ba80000, 262144) = 0
+     0.000027 munmap(0x3cbee6780000, 262144) = 0
+     0.000019 munmap(0x3d4c43b80000, 262144) = 0
+     0.000062 mprotect(0x38b177700000, 262144, PROT_NONE) = 0
+     0.000017 madvise(0x38b177700000, 262144, MADV_FREE) = 0
+     0.000023 mprotect(0x38b177740000, 262144, PROT_NONE) = 0
+     0.000016 madvise(0x38b177740000, 262144, MADV_FREE) = 0
+     0.000017 munmap(0x119d34d40000, 4096) = 0
+     0.000018 munmap(0xb69d1b40000, 262144) = 0
+     0.000033 munmap(0x3fcf8a680000, 262144) = 0
+     0.000023 munmap(0x1661c8700000, 135168) = 0
+     0.000021 munmap(0x1fa6086b0000, 32768) = 0
+     0.000016 munmap(0x24e155640000, 262144) = 0
+     0.000025 munmap(0x27d152f00000, 262144) = 0
+     0.000025 munmap(0x2625b3540000, 262144) = 0
+     0.000026 munmap(0x3c9049c40000, 262144) = 0
+     0.000029 munmap(0x34eaeb940000, 262144) = 0
+     0.000025 munmap(0x1d18d9280000, 262144) = 0
+     0.000019 munmap(0x16efdacc0000, 262144) = 0
+     0.000022 munmap(0x107e9b80000, 262144) = 0
+     0.000038 munmap(0x38b1776cf000, 134217728) = 0
+     0.000048 futex(0x55ab863e2e54, FUTEX_WAKE_PRIVATE, 2147483647) = 3
+     0.000018 futex(0x55ab863e2e3c, FUTEX_WAIT_PRIVATE, 7, NULL) = 0
+     0.000114 futex(0x55ab863e2e50, FUTEX_WAKE_PRIVATE, 2147483647) = 1
+     0.000016 futex(0x55ab863e2e00, FUTEX_WAKE_PRIVATE, 1) = 1
+     0.000015 write(12, "\1\0\0\0\0\0\0\0", 8) = 8
+     0.000018 futex(0x7f35ae3ff910, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 51999, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+     0.000032 futex(0x7f35ad3fd910, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 52001, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+     0.000043 munmap(0x7f35adbff000, 8392704) = 0
+     0.000026 epoll_ctl(3, EPOLL_CTL_ADD, 6, {events=EPOLLIN, data={u32=6, u64=6}}) = 0
+     0.000018 epoll_ctl(3, EPOLL_CTL_ADD, 8, {events=EPOLLIN, data={u32=8, u64=8}}) = 0
+     0.000017 epoll_wait(3, [], 1024, 0) = 0
+     0.000014 close(6)                  = 0
+     0.000015 close(7)                  = 0
+     0.000018 close(8)                  = 0
+     0.000014 close(3)                  = 0
+     0.000021 futex(0x7f35b3737c84, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+     0.000032 newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000022 fcntl(0, F_GETFL)         = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+     0.000015 rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
+     0.000016 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000017 ioctl(0, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000015 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000014 rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
+     0.000014 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000016 fcntl(1, F_GETFL)         = 0x80402 (flags O_RDWR|O_APPEND|O_CLOEXEC)
+     0.000013 rt_sigprocmask(SIG_BLOCK, [TTOU], NULL, 8) = 0
+     0.000014 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000014 ioctl(1, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000014 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+     0.000014 rt_sigprocmask(SIG_UNBLOCK, [TTOU], NULL, 8) = 0
+     0.000013 newfstatat(2, "", {st_mode=S_IFREG|0664, st_size=62486, ...}, AT_EMPTY_PATH) = 0
+     0.000016 fcntl(2, F_GETFL)         = 0x8001 (flags O_WRONLY|O_LARGEFILE)
+     0.000089 brk(0x55ab86549000)       = 0x55ab86549000
+     0.000017 brk(0x55ab86545000)       = 0x55ab86545000
+     0.000047 close(4)                  = 0
+     0.000014 close(5)                  = 0
+     0.000037 exit_group(0)             = ?
+     0.000782 +++ exited with 0 +++
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 29,98    0,000161           1       106           mmap
+ 19,74    0,000106           1        83           mprotect
+ 11,92    0,000064           1        64        44 openat
+  8,38    0,000045           0        71           brk
+  3,91    0,000021           1        19           read
+  3,91    0,000021           0        64           futex
+  3,91    0,000021           0        47        19 newfstatat
+  3,35    0,000018           3         6           clone3
+  3,17    0,000017           0        26           close
+  1,68    0,000009           0        51           munmap
+  1,49    0,000008           0        34        15 ioctl
+  0,74    0,000004           0        25           rt_sigprocmask
+  0,74    0,000004           2         2         1 arch_prctl
+  0,74    0,000004           0         8           prlimit64
+  0,56    0,000003           0        13           getpid
+  0,56    0,000003           0        11           getgid
+  0,56    0,000003           0        11           getegid
+  0,56    0,000003           3         1           set_tid_address
+  0,56    0,000003           3         1           set_robust_list
+  0,56    0,000003           1         3           pipe2
+  0,56    0,000003           3         1           rseq
+  0,37    0,000002           0        18           madvise
+  0,37    0,000002           0        11           getuid
+  0,37    0,000002           1         2           epoll_create1
+  0,19    0,000001           0         3           write
+  0,19    0,000001           0         5           rt_sigaction
+  0,19    0,000001           1         1           getcwd
+  0,19    0,000001           0        11           geteuid
+  0,19    0,000001           0         2           eventfd2
+  0,19    0,000001           0         2           getrandom
+  0,19    0,000001           0        12           statx
+  0,00    0,000000           0         4           pread64
+  0,00    0,000000           0         1         1 access
+  0,00    0,000000           0         1           execve
+  0,00    0,000000           0         9           fcntl
+  0,00    0,000000           0         2           readlink
+  0,00    0,000000           0         3           epoll_wait
+  0,00    0,000000           0         4           epoll_ctl
+------ ----------- ----------- --------- --------- ----------------
+100,00    0,000537           0       738        80 total

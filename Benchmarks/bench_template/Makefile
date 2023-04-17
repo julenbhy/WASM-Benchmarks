@@ -60,7 +60,7 @@ multitimeall:
 	 2>&1 | sed '1,2d' > ./compiled/Docker+WASM/$(TIME_OUT).txt
 	 
 
-STRACE_PARAMS=		#-c for summary
+STRACE_PARAMS=-C -r #-C for summary -r for timestamp
 STRACE_OUT=strace
 straceall:
 	strace $(STRACE_PARAMS) ./compiled/C/benchmark 2> ./compiled/C/$(STRACE_OUT).txt

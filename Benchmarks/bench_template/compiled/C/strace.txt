@@ -1,59 +1,81 @@
-execve("./compiled/C/benchmark", ["./compiled/C/benchmark"], 0x7fffe458e610 /* 66 vars */) = 0
-brk(NULL)                               = 0x555d5f624000
-arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd918a3e20) = -1 EINVAL (Invalid argument)
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5843d0d000
-access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64", 0x7ffd918a3040, 0) = -1 ENOENT (No such file or directory)
-openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
-newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
-openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=86127, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 86127, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f5843cf7000
-close(3)                                = 0
-openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
-pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
-pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
-pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f5843a00000
-mmap(0x7f5843a28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f5843a28000
-mmap(0x7f5843bbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f5843bbd000
-mmap(0x7f5843c15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f5843c15000
-mmap(0x7f5843c1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f5843c1b000
-close(3)                                = 0
-mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5843cf4000
-arch_prctl(ARCH_SET_FS, 0x7f5843cf4740) = 0
-set_tid_address(0x7f5843cf4a10)         = 40694
-set_robust_list(0x7f5843cf4a20, 24)     = 0
-rseq(0x7f5843cf50e0, 0x20, 0, 0x53053053) = 0
-mprotect(0x7f5843c15000, 16384, PROT_READ) = 0
-mprotect(0x555d5f278000, 4096, PROT_READ) = 0
-mprotect(0x7f5843d47000, 8192, PROT_READ) = 0
-prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-munmap(0x7f5843cf7000, 86127)           = 0
-newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
-getrandom("\x46\xc3\x76\xbc\x07\x38\x7e\xec", 8, GRND_NONBLOCK) = 8
-brk(NULL)                               = 0x555d5f624000
-brk(0x555d5f645000)                     = 0x555d5f645000
-write(1, "Hello, World!", 13)           = 13
-exit_group(0)                           = ?
-+++ exited with 0 +++
+     0.000000 execve("./compiled/C/benchmark", ["./compiled/C/benchmark"], 0x7ffdab810c00 /* 66 vars */) = 0
+     0.000553 brk(NULL)                 = 0x564e93f6b000
+     0.000110 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd55953ba0) = -1 EINVAL (Invalid argument)
+     0.000209 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1d1bf35000
+     0.000049 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+     0.000059 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000052 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v3", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000051 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000040 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/glibc-hwcaps/x86-64-v2", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000039 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000042 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/x86_64", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000039 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000040 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/haswell", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000039 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000039 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/x86_64", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000039 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000039 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/tls", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000039 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000039 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/x86_64", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000038 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000039 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/haswell", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000040 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000039 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib/x86_64", 0x7ffd55952dc0, 0) = -1 ENOENT (No such file or directory)
+     0.000038 openat(AT_FDCWD, "/home/julen/.wasmedge/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+     0.000040 newfstatat(AT_FDCWD, "/home/julen/.wasmedge/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+     0.000052 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+     0.000042 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=86191, ...}, AT_EMPTY_PATH) = 0
+     0.000042 mmap(NULL, 86191, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1d1bf1f000
+     0.000037 close(3)                  = 0
+     0.000044 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+     0.000041 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+     0.000041 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+     0.000040 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+     0.000116 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+     0.000116 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+     0.000197 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+     0.000057 mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1d1bc00000
+     0.000052 mmap(0x7f1d1bc28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f1d1bc28000
+     0.000263 mmap(0x7f1d1bdbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f1d1bdbd000
+     0.000063 mmap(0x7f1d1be15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f1d1be15000
+     0.000061 mmap(0x7f1d1be1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1d1be1b000
+     0.000062 close(3)                  = 0
+     0.000055 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1d1bf1c000
+     0.000047 arch_prctl(ARCH_SET_FS, 0x7f1d1bf1c740) = 0
+     0.000036 set_tid_address(0x7f1d1bf1ca10) = 51987
+     0.000035 set_robust_list(0x7f1d1bf1ca20, 24) = 0
+     0.000034 rseq(0x7f1d1bf1d0e0, 0x20, 0, 0x53053053) = 0
+     0.000100 mprotect(0x7f1d1be15000, 16384, PROT_READ) = 0
+     0.000047 mprotect(0x564e92e17000, 4096, PROT_READ) = 0
+     0.000048 mprotect(0x7f1d1bf6f000, 8192, PROT_READ) = 0
+     0.000133 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+     0.000058 munmap(0x7f1d1bf1f000, 86191) = 0
+     0.000096 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+     0.000069 getrandom("\x39\xd0\x00\xf6\xda\x5c\x05\xa0", 8, GRND_NONBLOCK) = 8
+     0.000046 brk(NULL)                 = 0x564e93f6b000
+     0.000035 brk(0x564e93f8c000)       = 0x564e93f8c000
+     0.000061 write(1, "Hello, World!", 13) = 13
+     0.000094 exit_group(0)             = ?
+     0.000159 +++ exited with 0 +++
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0,00    0,000000           0         1           read
+  0,00    0,000000           0         1           write
+  0,00    0,000000           0         2           close
+  0,00    0,000000           0         8           mmap
+  0,00    0,000000           0         3           mprotect
+  0,00    0,000000           0         1           munmap
+  0,00    0,000000           0         3           brk
+  0,00    0,000000           0         4           pread64
+  0,00    0,000000           0         1         1 access
+  0,00    0,000000           0         1           execve
+  0,00    0,000000           0         2         1 arch_prctl
+  0,00    0,000000           0         1           set_tid_address
+  0,00    0,000000           0        12        10 openat
+  0,00    0,000000           0        13         9 newfstatat
+  0,00    0,000000           0         1           set_robust_list
+  0,00    0,000000           0         1           prlimit64
+  0,00    0,000000           0         1           getrandom
+  0,00    0,000000           0         1           rseq
+------ ----------- ----------- --------- --------- ----------------
+100,00    0,000000           0        57        21 total

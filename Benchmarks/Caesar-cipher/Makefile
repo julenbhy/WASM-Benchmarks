@@ -132,7 +132,7 @@ multitimeall:
 	 2>&1 | sed '1,2d' > ./Large_dataset/Docker+WASM/$(TIME_OUT).txt
 	 
 	 
-PARAMS=		#-c for summary
+STRACE_PARAMS=-C -r #-c for summary -r for timestamp
 STRACE_OUT=strace
 straceall:
 	strace $(STRACE_PARAMS) ./Small_dataset/C/benchmark 2> ./Small_dataset/C/$(STRACE_OUT).txt
