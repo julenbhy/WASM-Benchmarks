@@ -1,5 +1,6 @@
 # WebAssembly execution model comparison
 #### Benchmarking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
+#### The result have been obtained with an i7-1260p with 32GB DDR5 ram and NVMe storage.
 
 ## Structure
 
