@@ -1,0 +1,12 @@
+compile:
+	gcc ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -D$(SIZE)_DATASET -w -o benchmark
+
+multitime:
+	multitime $(PARAMS) ./benchmark 2>&1 | sed '1,2d' > c.time
+
+
+strace:
+	strace $(PARAMS) ./benchmark 2>&1 | sed '1,2d' > c.strace
+
+
+
