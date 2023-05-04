@@ -6,63 +6,35 @@
 
 ```
 | Benchmarks
-	| bench_template
+	| fasta
+	| hello_world
 		benchmark.c
 		Makefile
 		time_plots.ipynb
 		| compiled
 			| C
-				| benchmark
-				| time.txt
-				| strace.txt
-			| WASM+JS
-				| benchmark.js
-				| benchmark.wasm
-				| time.txt
-				| strace.txt
+				benchmark
+				c.time
+				c.strace
+				Makefile
+				
 			| WASM
-				| benchmark.wasm
-				| time.txt
-				| strace.txt
-			| Docker+C
-				| benchmark
-				| Dockerfile
-				| time.txt
-				| strace.txt
-			| Docker+runtime
-				| benchmark.wasm
-				| Dockerfile
-				| time.txt
-				| strace.txt
-			| Docker+WASM
-				| benchmark.wasm
-				| Dockerfile
-				| time.txt
-				| strace.txt
+				clang.wasm
+				clang-wasmedge.time
+				clang-wasmedge.strace
+				clang-wasmtime.time
+				clang-wasmtime.strace
+				
+				emcc.wasm
+				emcc-wasmedge.time
+				emcc-wasmedge.strace
+				emcc-wasmtime.time
+				emcc-wasmtime.strace
+				
+				Makefile
 		
-	| Caesar-cipher
-		caesar-cipher.c
-		datasets.h
-		inputgen.c
-		Makefile
-		time_plots.ipynb
-		| Large_dataset
-			| C
-				| ...
-			| WASM+JS
-				| ...
-			| WASM
-				| ...
-			| Docker+C
-				| ...
-			| Docker+runtime
-				| ...
-			| Docker+WASM
-				| ..
-		| Medium_dataset
-			| ...
-		| Small_dataset
-			| ...
+	| nussinov
+	| parallel-mat-mul
 		
 	| ...
 	| <Benchmark-n>
@@ -73,39 +45,48 @@ README.md
 ## How to run
 
 Each benchmark has its own Makefile. Use this Makefile to prepare and run all the execution models
-  + 1st **make compileall**	to compile c.wasm and .js modules
-  + 2nd **make createcontainers**	to create all the containers
-  + 3rd **make multitimeall**	to measure the runtime of all models. Will generate time.txt for each execution model
-  + 4th **make straceall**	to measure the system calls of all models. Will generate strace.txt for each execution model
+  + 1st **make compile**	inde each benchmarks main directory, that will call the make compile of each subdirectory
+  + 2nd **make run		to run multitime and strace on each subdirectory
+  + 3rd **run the jupyter to plot the results**	
 	
 
 ## Execution models
 #### C: 
 &nbsp;&nbsp;&nbsp;&nbsp;C compiled code.
 
-#### WASM:
+#### clang-wasmtime:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using WASI-SDK Clang and executed with wasmtime.
+
+#### clang-wasmedge:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using WASI-SDK Clang and executed with wasmtime.
+
+#### clang-wamr:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using WASI-SDK Clang and executed with wamr.
+
+#### emcc-wasmtime:
 &nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmtime.
 
-#### WASM+JS:
-&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm  and .js glue code using emscripten and executed with node.
+#### emcc-wasmedge:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmedge.
 
-#### Docker+C:
-&nbsp;&nbsp;&nbsp;&nbsp;C code compiled and runned inside a container (from Ubuntu base image).
+#### emcc-wamr:
+&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wamr.
 
-#### Docker+runtime:
-&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmtime inside a container (from Ubuntu base image).
-
-#### Docker+WASM:
-&nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using emscripten and executed with wasmtime inside a container (using [Docker+Wasm Beta integration](https://www.docker.com/blog/announcing-dockerwasm-technical-preview-2/)).
 
 
 ## Benchmarks
-#### [bench_template:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/bench_template)
-&nbsp;&nbsp;&nbsp;&nbsp;Template for new benchmarks. Contains a hello_world benchmark.
+#### [hello_world:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/hello_world)
+&nbsp;&nbsp;&nbsp;&nbsp;Template for new benchmarks. Some new benchmarks may not be compatible with some of the compiler or runtimes or need some modification in the compilation.
 
-#### [Caesar-cipher:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/Caesar-cipher) 
-&nbsp;&nbsp;&nbsp;&nbsp;The Caesar cipher is an ancient cipher which is made by shifting the letters of the alphabet by a set number. So a shift of -3, for example, would move each letter to the left by 3, such that A would become X and D would become A. For this package it also includes numbers and punctuation but the concept is the same.
+#### [fasta:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/fasta) 
+&nbsp;&nbsp;&nbsp;&nbsp;The fasta...
 
-&nbsp;&nbsp;&nbsp;&nbsp;This benchmark has 3 different sizes available. Code from: https://github.com/greensoftwarelab/WasmBenchmarks
+#### [nussinov:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/nussinov) 
+&nbsp;&nbsp;&nbsp;&nbsp;The nussinov...
+
+#### [parallel-mat-mul:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/parallel-mat-mul) 
+&nbsp;&nbsp;&nbsp;&nbsp;The nussinov...
+
+&nbsp;&nbsp;&nbsp;&nbsp;Some of the benchmarks have multiple input sizes to choose from.
 
 
