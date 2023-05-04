@@ -1,29 +1,29 @@
 csmall:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Small_dataset/C/benchmark -lapr-1 -lgomp -lm -DSMALL_DATASET
+	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 benchmark.c -o Small_dataset/C/benchmark -lapr-1 -lgomp -lm -DSMALL_DATASET
 
 cmedium:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Medium_dataset/C/benchmark -lapr-1 -lgomp -lm -DMEDIUM_DATASET
+	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 benchmark.c -o Medium_dataset/C/benchmark -lapr-1 -lgomp -lm -DMEDIUM_DATASET
 
 clarge:
-	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 caesar-cipher.c -o Large_dataset/C/benchmark -lapr-1 -lgomp -lm -DLARGE_DATASET
+	/usr/bin/gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -fopenmp -D_FILE_OFFSET_BITS=64 -I/usr/include/apr-1.0 benchmark.c -o Large_dataset/C/benchmark -lapr-1 -lgomp -lm -DLARGE_DATASET
 
 wasmsmall:
-	emcc caesar-cipher.c -DSMALL_DATASET -o Small_dataset/WASM/benchmark.wasm -O2 -s WASM=1
+	emcc benchmark.c -DSMALL_DATASET -o Small_dataset/WASM/benchmark.wasm -O2 -s WASM=1
 	
 wasmmedium:
-	emcc caesar-cipher.c -DMEDIUM_DATASET -o Medium_dataset/WASM/benchmark.wasm -O2 -s WASM=1
+	emcc benchmark.c -DMEDIUM_DATASET -o Medium_dataset/WASM/benchmark.wasm -O2 -s WASM=1
 	
 wasmlarge:
-	emcc caesar-cipher.c -DLARGE_DATASET -o Large_dataset/WASM/benchmark.wasm -O2 -s WASM=1
+	emcc benchmark.c -DLARGE_DATASET -o Large_dataset/WASM/benchmark.wasm -O2 -s WASM=1
 	
 jssmall:
-	emcc caesar-cipher.c -DSMALL_DATASET -o Small_dataset/WASM+JS/benchmark.js -O2 -s WASM=1
+	emcc benchmark.c -DSMALL_DATASET -o Small_dataset/WASM+JS/benchmark.js -O2 -s WASM=1
 
 jsmedium:
-	emcc caesar-cipher.c -DMEDIUM_DATASET -o Medium_dataset/WASM+JS/benchmark.js -O2 -s WASM=1
+	emcc benchmark.c -DMEDIUM_DATASET -o Medium_dataset/WASM+JS/benchmark.js -O2 -s WASM=1
 	
 jslarge:
-	emcc caesar-cipher.c -DLARGE_DATASET -o Large_dataset/WASM+JS/benchmark.js -O2 -s WASM=1
+	emcc benchmark.c -DLARGE_DATASET -o Large_dataset/WASM+JS/benchmark.js -O2 -s WASM=1
 	
 small_docker_c:
 	cp Small_dataset/C/benchmark Small_dataset/Docker+C/
