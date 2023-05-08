@@ -7,15 +7,15 @@
 
 
 compile:
-	$(MAKE) -C compiled/C -e SIZE="LARGE"
-	$(MAKE) -C compiled/WASM -e SIZE="LARGE"
+	$(MAKE) -C compiled/C -e SIZE="MEDIUM"
+	$(MAKE) -C compiled/WASM -e SIZE="MEDIUM"
 
 
 run:	
-	$(MAKE) -C compiled/C multitime -e PARAMS="-q -n 1"
+	$(MAKE) -C compiled/C multitime -e PARAMS="-q -n 3"
 	$(MAKE) -C compiled/C strace -e PARAMS="-C -r"
-
-	$(MAKE) -C compiled/WASM multitime -e PARAMS="-q -n 1"
+	
+	$(MAKE) -C compiled/WASM multitime -e PARAMS="-q -n 3"
 	$(MAKE) -C compiled/WASM strace -e PARAMS="-C -r"
 	
 

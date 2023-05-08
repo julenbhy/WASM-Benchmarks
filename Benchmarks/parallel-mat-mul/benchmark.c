@@ -1,119 +1,92 @@
-// C Program to multiply two matrix using pthreads without
-// use of global variables
-#include<stdio.h>
-#include<pthread.h>
-#include<unistd.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
 #include "datasets.h"
 
+#define MAX_THREADS 1000 // Máximo número de hilos permitidos
 
 
+int num_threads; // Número de hilos a utilizar
 
-void generate_matrix(int matA[][SIZE], int matB[][SIZE], int r1, int c1, int r2, int c2){
-	int i, j, k;
+int matrix_a[SIZE][SIZE]; // Matriz A
+int matrix_b[SIZE][SIZE]; // Matriz B
+int matrix_c[SIZE][SIZE]; // Matriz resultante
 
-	// Generating random values in matA
-	for (i = 0; i < r1; i++)
-			for (j = 0; j < c1; j++)
-				matA[i][j] = rand() % 10;
-		
-	// Generating random values in matB
-	for (i = 0; i < r1; i++)
-			for (j = 0; j < c1; j++)
-				matB[i][j] = rand() % 10;
-	
-	// Displaying matA
-	printf("Matrix A:\n");		
-	for (i = 0; i < r1; i++){
-		for(j = 0; j < c1; j++)
-			printf("%d ",matA[i][j]);
-		printf("\n");
-	}
-	printf("\n");
-			
-	// Displaying matB
-	printf("Matrix B:\n");			
-	for (i = 0; i < r2; i++){
-		for(j = 0; j < c2; j++)
-			printf("%d ",matB[i][j]);
-		printf("\n");
-	}
-	printf("\n");
 
+void print_matrix(int matrix[][SIZE]){
+  for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < SIZE; j++) {
+      printf("%d ", matrix[i][j]);
+    }
+    printf("\n");
+  }
+  printf("\n");
 }
 
+void *multiply_matrices(void *arg) {
+  int thread_id = *(int*) arg; // ID del hilo actual
+  int start = thread_id * SIZE/num_threads; // Índice inicial
+  int end = (thread_id + 1) * SIZE/num_threads; // Índice final
+  
+  if(thread_id==num_threads) end=SIZE; //in case SIZE not divisible by num_threads
+  
+  
+  printf("Thread %d calulando de %d a %d\n", thread_id, start, end);
 
-//Each thread computes single element in the resultant matrix
-void *mult(void* arg)
-{
-	int *data = (int *)arg;
-	int k = 0, i = 0;
-	
-	int x = data[0];
-	for (i = 1; i <= x; i++)
-		k += data[i]*data[i+x];
-	
-	int *p = (int*)malloc(sizeof(int));
-		*p = k;
-	
-	//Used to terminate a thread and the return value is passed as a pointer
-	//pthread_exit(p); //throws compilation error: call to undeclared function 'pthread_exit'
-	return(p);
+  // Multiplicar las matrices
+  for (int i = start; i < end; i++) {
+    for (int j = 0; j < SIZE; j++) {
+      int sum = 0;
+      for (int k = 0; k < SIZE; k++) {
+        sum += matrix_a[i][k] * matrix_b[k][j];
+      }
+      matrix_c[i][j] = sum;
+    }
+  }
+
+  return(NULL);
 }
 
+int main(int argc, char *argv[]) {
+  if (argc < 2) {
+    printf("Usage: %s <num_threads>\n", argv[0]);
+    exit(1);
+  }
+
+  num_threads = atoi(argv[1]); 
+  if (num_threads > MAX_THREADS) {
+    printf("Error: Maximum number of threads is %d\n", MAX_THREADS);
+    exit(1);
+  }
+
+  // Inicialize matrices
+  for (int i = 0; i < SIZE; i++) {
+    for (int j = 0; j < SIZE; j++) {
+      matrix_a[i][j] = rand() % 10;
+      matrix_b[i][j] = rand() % 10;
+      matrix_c[i][j] = 0;
+    }
+  }
+  printf("Matrix a:\n");
+  //print_matrix(matrix_a);
+  printf("Matrix b:\n");
+  //print_matrix(matrix_b);
 
 
+  pthread_t threads[num_threads];
+  int thread_ids[MAX_THREADS];
+  for (int i = 0; i < num_threads; i++) {
+    thread_ids[i] = i;
+    pthread_create(&threads[i], NULL, multiply_matrices, (void*) &thread_ids[i]);
+  }
 
-int main()
-{
+  for (int i = 0; i < num_threads; i++) {
+    pthread_join(threads[i], NULL);
+  }
 
-	int matA[SIZE][SIZE];
-	int matB[SIZE][SIZE];
-	int r1=SIZE,c1=SIZE,r2=SIZE,c2=SIZE;
+  printf("Result:\n");
+  //print_matrix(matrix_c);
+  printf("Multiplyed %dx%d matrices using %d threads\n", SIZE, SIZE, num_threads);
 
-	generate_matrix(matA, matB, r1, c1, r2, c2);
-
-	
-	//declaring array of threads of size r1*c2
-	int n_threads = r1*c2;
-	printf("Creating %d threads\n\n", n_threads);
-	pthread_t threads[n_threads];
-	//threads = (pthread_t*)malloc(max*sizeof(pthread_t));
-	
-	int count = 0;
-	int* data = NULL;
-	for (int i = 0; i < r1; i++)
-		for (int j = 0; j < c2; j++){
-				
-			//storing row and column elements in data
-			data = (int *)malloc((20)*sizeof(int));
-			data[0] = c1;
-	
-			for (int k = 0; k < c1; k++)
-				data[k+1] = matA[i][k];
-	
-			for (int k = 0; k < r2; k++)
-				data[k+c1+1] = matB[k][j];
-			
-			//creating threads
-			pthread_create(&threads[count++], NULL, mult, (void*)(data));
-				
-		}
-	
-	printf("RESULTANT MATRIX:\n");
-	for (int i = 0; i < n_threads; i++){
-		void *k;
-		
-		//Joining all threads and collecting return value
-		pthread_join(threads[i], &k);
-					
-		int *p = (int *)k;
-		printf("%d ",*p);
-		if ((i + 1) % c2 == 0) printf("\n");
-	}
-
-	
-
-return 0;
+  return 0;
 }
-
