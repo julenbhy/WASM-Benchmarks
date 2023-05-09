@@ -1,15 +1,15 @@
 compile:
-	$(MAKE) -C compiled/C -e SIZE=MEDIUM
-	$(MAKE) -C compiled/WASM -e SIZE=MEDIUM
+	make -C compiled/C -e SIZE=MEDIUM
+	make -C compiled/WASM -e SIZE=MEDIUM
 
 
 NUM_THREADS=16
 run:
-	$(MAKE) -C compiled/C multitime -e PARAMS="-q -n 10" THREADS=$(NUM_THREADS)
-	$(MAKE) -C compiled/C strace -e PARAMS="-C -r" THREADS=$(NUM_THREADS)
+	make -C compiled/C multitime -e PARAMS="-q -n 10" NUM_THREADS=$(NUM_THREADS)
+	make -C compiled/C strace -e PARAMS="-C -r" NUM_THREADS=$(NUM_THREADS)
 	
-	$(MAKE) -C compiled/WASM multitime -e PARAMS="-q -n 10" THREADS=$(NUM_THREADS)
-	$(MAKE) -C compiled/WASM strace -e PARAMS="-C -r" THREADS=$(NUM_THREADS)
+	make -C compiled/WASM multitime -e PARAMS="-q -n 10" NUM_THREADS=$(NUM_THREADS)
+	make -C compiled/WASM strace -e PARAMS="-C -r" NUM_THREADS=$(NUM_THREADS)
 
 
 clean:

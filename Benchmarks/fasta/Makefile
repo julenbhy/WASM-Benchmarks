@@ -1,14 +1,14 @@
 compile:
-	$(MAKE) -C compiled/C -e SIZE=MEDIUM
-	$(MAKE) -C compiled/WASM -e SIZE=MEDIUM
+	make -C compiled/C -e SIZE=MEDIUM
+	make -C compiled/WASM -e SIZE=MEDIUM
 
 
 run:
-	$(MAKE) -C compiled/C multitime -e PARAMS="-q -n 10"
-	$(MAKE) -C compiled/C strace -e PARAMS="-C -r"
+	make -C compiled/C multitime -e PARAMS="-q -n 10"
+	make -C compiled/C strace -e PARAMS="-C -r"
 	
-	$(MAKE) -C compiled/WASM multitime -e PARAMS="-q -n 10"
-	$(MAKE) -C compiled/WASM strace -e PARAMS="-C -r"
+	make -C compiled/WASM multitime -e PARAMS="-q -n 10"
+	make -C compiled/WASM strace -e PARAMS="-C -r"
 
 
 clean:

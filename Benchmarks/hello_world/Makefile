@@ -1,14 +1,14 @@
 compile:
-	$(MAKE) -C compiled/C
-	$(MAKE) -C compiled/WASM
+	make -C compiled/C
+	make -C compiled/WASM
 
 
 run:
-	$(MAKE) -C compiled/C multitime -e PARAMS="-q -n 10"
-	$(MAKE) -C compiled/C strace -e PARAMS="-C -r"
+	make -C compiled/C multitime -e PARAMS="-q -n 10"
+	make -C compiled/C strace -e PARAMS="-C -r"
 	
-	$(MAKE) -C compiled/WASM multitime -e PARAMS="-q -n 10"
-	$(MAKE) -C compiled/WASM strace -e PARAMS="-C -r"
+	make -C compiled/WASM multitime -e PARAMS="-q -n 10"
+	make -C compiled/WASM strace -e PARAMS="-C -r"
 
 
 clean:
