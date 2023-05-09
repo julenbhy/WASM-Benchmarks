@@ -89,12 +89,6 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 #### [parallel-mat-mul:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/parallel-mat-mul) 
 &nbsp;&nbsp;&nbsp;&nbsp;The parallel matrix multiplication algorithm...
 
-#### [nussinov:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/nussinov) 
-&nbsp;&nbsp;&nbsp;&nbsp;The nussinov algorithm...
-
-#### [parallel-mat-mul:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/parallel-mat-mul) 
-&nbsp;&nbsp;&nbsp;&nbsp;The parallel matrix multiplicarion algorithm...
-
 #### [pigz:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/pigz) 
 &nbsp;&nbsp;&nbsp;&nbsp;The pigz (parallel gzip) algorithm...
 
@@ -102,5 +96,30 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 &nbsp;&nbsp;&nbsp;&nbsp;The quicksort algorithm...
 
 &nbsp;&nbsp;&nbsp;&nbsp;Some of the benchmarks have multiple input sizes to choose from.
+
+
+
+## Results
+
+| clang     | Fasta  | Nussinov  | parallel-mat-mul | pigz  | quicksort |
+| --------- | ------ | --------- | ---------------- | ----- | --------- |
+| C         | 0.274  | 0.043     | 0.081            | 3.736 | 0.052	| 
+| Wasmtime  | 0.439  | 0.048     | 0.254            | 4.749 | X		| 
+| Wasmedge  | 45.023 | 17.995    | X                | X     | X		| 
+| Wamr	    | 3.707  | 3.095     | 6.987            | X     | X		| 
+
+parallel-mat-mul and pigz are tested with 8 threads
+
+
+| emcc      | Fasta  | Nussinov  | parallel-mat-mul \n 8threads | pigz  | quicksort |
+| --------- | ------ | --------- | ---------------- | ----- | --------- |
+| C         | 0.274  | 0.043     | X                | X	    | 0.052	| 
+| Wasmtime  | 0.437  | 0.051     | X                | X     | 0.115	| 
+| Wasmedge  | 48.803 | 18.525    | X                | X     | 10.581	| 
+| Wamr	    | 3.590  | 3.123     | X                | X     | 1.659	| 
+
+emcc doesn't implement thread support for standalone wasm modules
+
+
 
 
