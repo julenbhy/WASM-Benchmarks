@@ -78,7 +78,7 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 
 ## Benchmarks
 #### [hello_world:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/hello_world)
-&nbsp;&nbsp;&nbsp;&nbsp;Template for new benchmarks. Some new benchmarks may not be compatible with some of the compiler or runtimes or need some modification in the compilation.
+&nbsp;&nbsp;&nbsp;&nbsp;Template for new benchmarks. Some benchmarks may not be compatible with some of the compilers or runtimes or may need some modification.
 
 #### [fasta:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/fasta) 
 &nbsp;&nbsp;&nbsp;&nbsp;The fasta algorithm...
@@ -90,10 +90,16 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 &nbsp;&nbsp;&nbsp;&nbsp;The parallel matrix multiplication algorithm...
 
 #### [nussinov:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/nussinov) 
-&nbsp;&nbsp;&nbsp;&nbsp;The nussinov...
+&nbsp;&nbsp;&nbsp;&nbsp;The nussinov algorithm...
 
 #### [parallel-mat-mul:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/parallel-mat-mul) 
-&nbsp;&nbsp;&nbsp;&nbsp;The nussinov...
+&nbsp;&nbsp;&nbsp;&nbsp;The parallel matrix multiplicarion algorithm...
+
+#### [pigz:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/pigz) 
+&nbsp;&nbsp;&nbsp;&nbsp;The pigz (parallel gzip) algorithm...
+
+#### [quicksort:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/parallel-mat-mul) 
+&nbsp;&nbsp;&nbsp;&nbsp;The quicksort algorithm...
 
 &nbsp;&nbsp;&nbsp;&nbsp;Some of the benchmarks have multiple input sizes to choose from.
 
