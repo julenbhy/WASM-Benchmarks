@@ -35,6 +35,8 @@
 		
 	| nussinov
 	| parallel-mat-mul
+	| pigz
+	| quicksort
 		
 	| ...
 	| <Benchmark-n>
@@ -79,7 +81,13 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 &nbsp;&nbsp;&nbsp;&nbsp;Template for new benchmarks. Some new benchmarks may not be compatible with some of the compiler or runtimes or need some modification in the compilation.
 
 #### [fasta:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/fasta) 
-&nbsp;&nbsp;&nbsp;&nbsp;The fasta...
+&nbsp;&nbsp;&nbsp;&nbsp;The fasta algorithm...
+
+#### [nussinov:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/nussinov) 
+&nbsp;&nbsp;&nbsp;&nbsp;The nussinov algorithm...
+
+#### [parallel-mat-mul:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/parallel-mat-mul) 
+&nbsp;&nbsp;&nbsp;&nbsp;The parallel matrix multiplication algorithm...
 
 #### [nussinov:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/nussinov) 
 &nbsp;&nbsp;&nbsp;&nbsp;The nussinov...
