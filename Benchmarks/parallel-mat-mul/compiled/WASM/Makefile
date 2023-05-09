@@ -8,8 +8,7 @@ compile:
 WT_FLAGS = --wasm-features=threads --wasi-modules=experimental-wasi-threads
 multitime:
 	
-	multitime $(PARAMS) wasmtime $(WT_FLAGS) clang.wasm $(THREADS) 2>&1 | sed '1,2d' > clang-wasmtime.time
-	#time wasmtime $(WT_FLAGS) clang.wasm $(THREADS)
+	multitime $(PARAMS) wasmtime $(WT_FLAGS) clang.wasm $(NUM_THREADS) 2>&1 | sed '1,2d' > clang-wasmtime.time
 	
 #	multitime $(PARAMS) wasmtime $(WT_FLAGS) emcc.wasm 2>&1 | sed '1,2d' > emcc-wasmtime.time
 	
@@ -17,15 +16,14 @@ multitime:
 	
 #	multitime $(PARAMS) wasmedge --enable-threads emcc.wasm 2>&1 | sed '1,2d' > emcc-wasmedge.time
 	
-	multitime $(PARAMS) iwasm --max-threads=$(THREADS) clang.wasm $(THREADS) 2>&1 | sed '1,2d' > clang-wamr.time
-	#time iwasm --max-threads=$(THREADS) clang.wasm $(THREADS)
+	multitime $(PARAMS) iwasm --max-threads=$(NUM_THREADS) clang.wasm $(NUM_THREADS) 2>&1 | sed '1,2d' > clang-wamr.time
 	
 #	multitime $(PARAMS) iwasm --max-threads=1000 emcc.wasm 2>&1 | sed '1,2d' > emcc-wamr.time
 	 
 
 strace:
 	
-	strace $(PARAMS) wasmtime $(WT_FLAGS) clang.wasm $(THREADS) 2>&1 | sed '1,2d' > clang-wasmtime.strace
+	strace $(PARAMS) wasmtime $(WT_FLAGS) clang.wasm $(NUM_THREADS) 2>&1 | sed '1,2d' > clang-wasmtime.strace
 	
 #	strace $(PARAMS) wasmtime $(WT_FLAGS) emcc.wasm 2>&1 | sed '1,2d' > emcc-wasmtime.strace
 	
@@ -33,7 +31,7 @@ strace:
 	
 #	strace $(PARAMS) wasmedge --enable-threads emcc.wasm 2>&1 | sed '1,2d' > emcc-wasmedge.strace
 	
-	strace $(PARAMS) iwasm --max-threads=$(THREADS) clang.wasm $(THREADS) 2>&1 | sed '1,2d' > clang-wamr.strace
+	strace $(PARAMS) iwasm --max-threads=$(NUM_THREADS) clang.wasm $(NUM_THREADS) 2>&1 | sed '1,2d' > clang-wamr.strace
 	
-#	strace $(PARAMS) iwasm --max-threads=1000 emcc.wasm 2>&1 | sed '1,2d' > emcc-wamr.strace
+#	strace $(PARAMS) iwasm --max-threads=$(NUM_THREADS) emcc.wasm 2>&1 | sed '1,2d' > emcc-wamr.strace
 
