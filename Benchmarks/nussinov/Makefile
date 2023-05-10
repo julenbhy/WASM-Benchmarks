@@ -6,9 +6,10 @@
 # -DPOLYBENCH_TIME, to report the execution time
 
 
+SIZE ?= MEDIUM
 compile:
-	make -C compiled/C -e SIZE="MEDIUM"
-	make -C compiled/WASM -e SIZE="MEDIUM"
+	make -C compiled/C -e SIZE=$(SIZE)
+	make -C compiled/WASM -e SIZE=$(SIZE)
 
 
 run:	

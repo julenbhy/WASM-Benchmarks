@@ -14,14 +14,14 @@ int main (void) {
   int i;
 
   quicksort(a, n);
-
+/**
   printf("[");
   for (i = 0; i < n-1; i++) {
     printf("%d,", a[i]);
   }
   printf("%d",a[i]);
   printf("]\n");
-
+**/
   return 0;
 }
 
