@@ -48,7 +48,7 @@ README.md
 
 Each benchmark has its own Makefile. Use this Makefile to prepare and run all the execution models
   + 1st **make compile**	inde each benchmarks main directory, that will call the make compile of each subdirectory
-  + 2nd **make run		to run multitime and strace on each subdirectory
+  + 2nd **make run**		to run multitime and strace on each subdirectory
   + 3rd **run the jupyter to plot the results**	
 	
 
