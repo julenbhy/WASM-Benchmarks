@@ -6,15 +6,18 @@ compile:
 
 
 multitime:
-	@rm -f random.bin.gz
 	multitime $(PARAMS) wasmtime --dir . --wasm-features=threads --wasi-modules=experimental-wasi-threads src/pigz/pigz.wasm -- -k -p $(NUM_THREADS) random.bin 2>&1 | sed '1,2d' > clang-wasmtime.time
-	
 	@rm -f random.bin.gz
-	#multitime $(PARAMS) iwasm --dir=. --max-threads=$(NUM_THREADS) src/pigz/pigz.wasm -k -p $(NUM_THREADS) 2>&1 | sed '1,2d' > clang-wamr.time
+	
+	multitime $(PARAMS) iwasm --dir=. --max-threads=$(shell echo ${NUM_THREADS}+1 | bc) src/pigz/pigz.wasm -k -p $(NUM_THREADS) random.bin 2>&1 | sed '1,2d' > clang-wamr.time
+	@rm -f random.bin.gz
 
 strace:
+	strace $(PARAMS) wasmtime --dir . --wasm-features=threads --wasi-modules=experimental-wasi-threads src/pigz/pigz.wasm -- -k -p $(NUM_THREADS) random.bin 2>&1 | sed '1,2d' > clang-wasmtime.strace
+	@rm -f random.bin.gz
 	
-	#strace $(PARAMS) wasmtime clang.wasm 2>&1 | sed '1,2d' > clang-wasmtime.strace
+	strace $(PARAMS) iwasm --dir=. --max-threads=$(shell echo ${NUM_THREADS}+1 | bc) src/pigz/pigz.wasm -k -p $(NUM_THREADS) random.bin 2>&1 | sed '1,2d' > clang-wamr.strace
+	@rm -f random.bin.gz
 	
 
 clean:

@@ -6,12 +6,13 @@ compile:
 
 
 multitime:
-	@rm -f random.bin.gz
 	multitime $(PARAMS) ./src/pigz -k -p $(NUM_THREADS) random.bin 2>&1 | sed '1,2d' > c.time
+	@rm -f random.bin.gz
 
 
 strace:
-	#strace $(PARAMS) ./benchmark 2>&1 | sed '1,2d' > c.strace
+	strace $(PARAMS) ./src/pigz -k -p $(NUM_THREADS) random.bin 2>&1 | sed '1,2d' > c.strace
+	@rm -f random.bin.gz
 	
 clean:
 	rm -rf src
