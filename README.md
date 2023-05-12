@@ -121,5 +121,8 @@ parallel-mat-mul and pigz are tested with 8 threads
 emcc doesn't implement thread support for standalone wasm modules
 
 
-
+## Requirements
+curl
+cmake
+cargo
 
