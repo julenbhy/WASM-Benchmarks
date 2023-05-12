@@ -130,3 +130,12 @@ cmake
 
 rust
 
+wasi-sdk-20 or higher at /opt/wasi-sdk
+
+emscripten
+
+wasmtime
+
+wasmedge
+
+wamr
