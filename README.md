@@ -130,3 +130,5 @@ cmake
 
 cargo
 
+rust
+
