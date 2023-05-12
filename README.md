@@ -128,7 +128,5 @@ make
 
 cmake
 
-cargo
-
 rust
 
