@@ -123,6 +123,10 @@ emcc doesn't implement thread support for standalone wasm modules
 
 ## Requirements
 curl
+
+make
+
 cmake
+
 cargo
 
