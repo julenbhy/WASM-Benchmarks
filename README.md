@@ -3,7 +3,7 @@
 #### The result have been obtained with an i7-1260p with 32GB DDR5 ram and NVMe storage.
 
 ## Structure
-
+ 
 ```
 | Benchmarks
 	| fasta
