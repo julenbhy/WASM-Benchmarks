@@ -6,7 +6,9 @@
  
 ```
 | Benchmarks
+	| deriche
 	| fasta
+	| floyd-warshall
 	| hello_world
 		benchmark.c
 		Makefile
@@ -37,9 +39,7 @@
 	| parallel-mat-mul
 	| pigz
 	| quicksort
-		
 	| ...
-	| <Benchmark-n>
 README.md
 
 ```
@@ -80,8 +80,14 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 #### [hello_world:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/hello_world)
 &nbsp;&nbsp;&nbsp;&nbsp;Template for new benchmarks. Some benchmarks may not be compatible with some of the compilers or runtimes or may need some modification.
 
+#### [deriche:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/deriche) 
+&nbsp;&nbsp;&nbsp;&nbsp;The deriche algorithm...
+
 #### [fasta:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/fasta) 
 &nbsp;&nbsp;&nbsp;&nbsp;The fasta algorithm...
+
+#### [floyd-warshall:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/floyd-warshall) 
+&nbsp;&nbsp;&nbsp;&nbsp;The deriche algorithm...
 
 #### [nussinov:](https://github.com/julenbhy/WASM-Benchmarks/tree/main/Benchmarks/nussinov) 
 &nbsp;&nbsp;&nbsp;&nbsp;The nussinov algorithm...
