@@ -101,22 +101,22 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 
 ## Results
 
-| clang     | Fasta  | Nussinov  | parallel-mat-mul | pigz   | quicksort |
-| --------- | ------ | --------- | ---------------- | ------ | --------- |
-| C         | 0.274  | 0.043     | 0.081            | 3.639  | 0.071	| 
-| Wasmtime  | 0.439  | 0.048     | 0.254            | 4.232  | 0.130	| 
-| Wasmedge  | 45.023 | 17.995    | X                | X      | 9.493	| 
-| Wamr	    | 3.707  | 3.095     | 6.987            | 63.834 | 0.947	| 
+| clang     | Deriche | Fasta  | Nussinov  | parallel-mat-mul | pigz   | quicksort |
+| --------- | ------- | ------ | --------- | ---------------- | ------ | --------- |
+| C         | 0.251   | 0.274  | 0.043     | 0.081            | 3.639  | 0.071	| 
+| Wasmtime  | 0.268   | 0.439  | 0.048     | 0.254            | 4.232  | 0.130	| 
+| Wasmedge  | 24.242  | 45.023 | 17.995    | X                | X      | 9.493	| 
+| Wamr	    | 4.682   | 3.707  | 3.095     | 6.987            | 63.834 | 0.947	| 
 
 parallel-mat-mul and pigz are tested with 8 threads
 
 
-| emcc      | Fasta  | Nussinov  | parallel-mat-mul | pigz   | quicksort |
-| --------- | ------ | --------- | ---------------- | ------ | --------- |
-| C         | 0.274  | 0.043     | 0.081            | 3.639  | 0.071	| 
-| Wasmtime  | 0.437  | 0.051     | X                | X      | 0.131	| 
-| Wasmedge  | 48.803 | 18.525    | X                | X      | 9.637	| 
-| Wamr	    | 3.590  | 3.123     | X                | X      | 0.495	| 
+| emcc      | Deriche | Fasta  | Nussinov  | parallel-mat-mul | pigz   | quicksort |
+| --------- | ------- | ------ | --------- | ---------------- | ------ | --------- |
+| C         | 0.251   | 0.274  | 0.043     | 0.081            | 3.639  | 0.071	| 
+| Wasmtime  | 0.275   | 0.437  | 0.051     | X                | X      | 0.131	| 
+| Wasmedge  | 24.117  | 48.803 | 18.525    | X                | X      | 9.637	| 
+| Wamr	    | 4.440   | 3.590  | 3.123     | X                | X      | 0.495	| 
 
 emcc doesn't implement thread support for standalone wasm modules
 
