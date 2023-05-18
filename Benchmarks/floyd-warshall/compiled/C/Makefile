@@ -1,5 +1,5 @@
 compile:
-	gcc ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -D$(SIZE)_DATASET -w -o benchmark
+	gcc ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -D$(SIZE)_DATASET -O3 -o benchmark
 
 
 PARAMS?=-q -n 1

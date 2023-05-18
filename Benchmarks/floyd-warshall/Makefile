@@ -6,17 +6,17 @@
 # -DPOLYBENCH_TIME, to report the execution time
 
 
-SIZE ?= MEDIUM
+SIZE ?= LARGE
 compile:
 	make -C compiled/C -e SIZE=$(SIZE)
 	make -C compiled/WASM -e SIZE=$(SIZE)
 
 
 run:	
-	make -C compiled/C multitime -e PARAMS="-q -n 3"
+	make -C compiled/C multitime -e PARAMS="-q -n 10"
 	make -C compiled/C strace -e PARAMS="-C -r"
 	
-	make -C compiled/WASM multitime -e PARAMS="-q -n 3"
+	make -C compiled/WASM multitime -e PARAMS="-q -n 10"
 	make -C compiled/WASM strace -e PARAMS="-C -r"
 	
 

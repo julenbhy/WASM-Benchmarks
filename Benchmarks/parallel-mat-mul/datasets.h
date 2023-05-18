@@ -2,7 +2,7 @@
 #define SIZE 10
 #endif
 #ifdef LARGE_DATASET
-#define SIZE 10000
+#define SIZE 2000
 #endif
 
 #ifndef SMALL_DATASET
@@ -14,5 +14,5 @@
 #endif
 
 #ifdef MEDIUM_DATASET
-#define SIZE 1000
+#define SIZE 500
 #endif

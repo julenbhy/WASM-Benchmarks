@@ -1,4 +1,4 @@
-SIZE ?= MEDIUM
+SIZE ?= LARGE
 compile:
 	make -C compiled/C -e SIZE=$(SIZE)
 	make -C compiled/WASM -e SIZE=$(SIZE)

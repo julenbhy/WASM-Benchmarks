@@ -1,7 +1,7 @@
 compile:
-	emcc ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -s TOTAL_MEMORY=256MB -D$(SIZE)_DATASET -o emcc.wasm
+	emcc ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -s TOTAL_MEMORY=256MB -D$(SIZE)_DATASET -O3 -o emcc.wasm
 	
-	/opt/wasi-sdk/bin/clang ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -D$(SIZE)_DATASET -D_WASI_EMULATED_PROCESS_CLOCKS -o clang.wasm
+	/opt/wasi-sdk/bin/clang ../../benchmark.c -I ../../utilities ../../utilities/polybench.c -D$(SIZE)_DATASET -D_WASI_EMULATED_PROCESS_CLOCKS -O3 -o clang.wasm
 
 
 PARAMS?=-q -n 1

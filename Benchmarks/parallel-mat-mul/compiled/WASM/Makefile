@@ -1,8 +1,9 @@
 compile:
-	/opt/wasi-sdk/bin/clang --target=wasm32-wasi-threads -pthread -Wl,--import-memory,--export-memory,--max-memory=67108864 ../../benchmark.c -o clang.wasm -D$(SIZE)_DATASET
-# maximum memory must be 65536-byte (64kiB) aligned, cannot be greater than 4294967296 (4GiB)
-#67108864 = 64MiB
-#	emcc -pthread ../../benchmark.c -o emcc.wasm -D$(SIZE)_DATASET
+	/opt/wasi-sdk/bin/clang --target=wasm32-wasi-threads -pthread -Wl,--import-memory,--export-memory,--max-memory=1310720000 ../../benchmark.c -D$(SIZE)_DATASET -O3 -o clang.wasm
+	# maximum memory must be 65536-byte (64kiB) aligned, cannot be greater than 4294967296 (4GiB)
+	#67108864 = 64MiB
+	
+#	emcc -pthread ../../benchmark.c -D$(SIZE)_DATASET -O3 -o emcc.wasm
 
 
 WT_FLAGS = --wasm-features=threads --wasi-modules=experimental-wasi-threads

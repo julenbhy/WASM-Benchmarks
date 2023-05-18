@@ -1,7 +1,7 @@
 compile:
-	/opt/wasi-sdk/bin/clang ../../benchmark.c -o clang.wasm
+	/opt/wasi-sdk/bin/clang ../../benchmark.c -O3 -o clang.wasm
 	
-	emcc ../../benchmark.c -o emcc.wasm -D$(SIZE)_DATASET
+	emcc ../../benchmark.c -D$(SIZE)_DATASET -O3 -o emcc.wasm
 
 
 multitime:

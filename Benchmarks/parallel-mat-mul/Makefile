@@ -1,10 +1,10 @@
-SIZE ?= MEDIUM
+SIZE ?= LARGE
 compile:
 	make -C compiled/C -e SIZE=$(SIZE)
 	make -C compiled/WASM -e SIZE=$(SIZE)
 
 
-NUM_THREADS=16
+NUM_THREADS=8
 run:
 	make -C compiled/C multitime -e PARAMS="-q -n 10" NUM_THREADS=$(NUM_THREADS)
 	make -C compiled/C strace -e PARAMS="-C -r" NUM_THREADS=$(NUM_THREADS)
