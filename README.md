@@ -127,21 +127,14 @@ parallel-mat-mul and pigz are tested with 8 threads
 emcc doesn't implement thread support for standalone wasm modules
 
 
-## Requirements
-curl
+## Used sofware
 
-make
+wasi-sdk-20
 
-cmake
+emscripten 3.1.5
 
-rust
+wasmtime-cli 8.0.1
 
-wasi-sdk-20 or higher at /opt/wasi-sdk
+wasmedge 0.12.1
 
-emscripten
-
-wasmtime
-
-wasmedge
-
-wamr
+wamr(iwasm) 1.2.1
