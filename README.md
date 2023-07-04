@@ -1,6 +1,7 @@
 # WebAssembly execution model comparison
 #### Benchmarking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
 #### The result have been obtained with an i7-1260p with 32GB DDR5 ram and NVMe storage.
+#### WASI-SDK-20, emscripten 3.1.5, wasmtime 8.0.1, wasmedge 0.12.1, iwasm(wamr) 1.2.1
 
 ## Structure
  
@@ -18,8 +19,10 @@
 				benchmark
 				c.time
 				c.strace
-				Makefile
-				
+
+				benchmark32
+				c32.time
+				c32.strace				
 			| WASM
 				clang.wasm
 				clang-wasmedge.time
@@ -32,9 +35,7 @@
 				emcc-wasmedge.strace
 				emcc-wasmtime.time
 				emcc-wasmtime.strace
-				
-				Makefile
-		
+						
 	| nussinov
 	| parallel-mat-mul
 	| pigz
@@ -55,6 +56,9 @@ Each benchmark has its own Makefile. Use this Makefile to prepare and run all th
 ## Execution models
 #### C: 
 &nbsp;&nbsp;&nbsp;&nbsp;C compiled code.
+
+#### C32: 
+&nbsp;&nbsp;&nbsp;&nbsp;C compiled to 32 bits.
 
 #### clang-wasmtime:
 &nbsp;&nbsp;&nbsp;&nbsp;C code compiled to .wasm using WASI-SDK Clang and executed with wasmtime.
