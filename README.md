@@ -1,4 +1,4 @@
-# WebAssembly execution model comparison
+# WebAssembly compiler and runtime benchmarking
 #### Benchmarking Runtime performance and system calls between C, WebAssembly and containers, using multiple benchmarks and dataset sizes.
 #### The result have been obtained with an i7-1260p with 32GB DDR5 ram and NVMe storage.
 #### WASI-SDK-20, emscripten 3.1.5, wasmtime 8.0.1, wasmedge 0.12.1, iwasm(wamr) 1.2.1
